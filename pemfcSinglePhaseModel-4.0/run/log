@@ -1,0 +1,1954 @@
+(cp -rf ./system/controlDict.mesh ./system/controlDict);
+(blockMesh);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : blockMesh
+Date   : Jan 28 2021
+Time   : 15:29:29
+Host   : "fatima-HP-625"
+PID    : 5897
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/blockMeshDict"
+Creating curved edges
+Creating topology blocks
+Creating topology patches
+
+Reading patches section
+
+Creating block mesh topology
+
+Reading physicalType from existing boundary file
+
+Default patch type set to empty
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 8
+		Number of boundary faces : 38
+		Number of defined boundary faces : 38
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 0.001
+    Block 0 cell size :
+        i : 0.0001 .. 0.0001
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+    Block 1 cell size :
+        i : 5e-05 .. 5e-05
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+    Block 2 cell size :
+        i : 2.05e-05 .. 2.05e-05
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+    Block 3 cell size :
+        i : 1.85e-06 .. 1.85e-06
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+    Block 4 cell size :
+        i : 2.54e-05 .. 2.54e-05
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+    Block 5 cell size :
+        i : 1.85e-06 .. 1.85e-06
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+    Block 6 cell size :
+        i : 2.05e-05 .. 2.05e-05
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+    Block 7 cell size :
+        i : 5e-05 .. 5e-05
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+    Block 8 cell size :
+        i : 0.0001 .. 0.0001
+        j : 0.0005 .. 0.0005
+        k : 0.001 .. 0.001
+
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 0) (0.0069544 0.022 0.022)
+  nPoints: 144900
+  nCells: 134552
+  nFaces: 413798
+  nInternalFaces: 393514
+----------------
+Patches
+----------------
+  patch 0 (start: 393514 size: 968) name: cbpRight
+  patch 1 (start: 394482 size: 1980) name: cbpSides
+  patch 2 (start: 396462 size: 1320) name: airInlet
+  patch 3 (start: 397782 size: 1320) name: airOutlet
+  patch 4 (start: 399102 size: 1320) name: airSides
+  patch 5 (start: 400422 size: 2640) name: cgdlSides
+  patch 6 (start: 403062 size: 264) name: cclSides
+  patch 7 (start: 403326 size: 660) name: electrolyteSides
+  patch 8 (start: 403986 size: 264) name: aclSides
+  patch 9 (start: 404250 size: 2640) name: agdlSides
+  patch 10 (start: 406890 size: 1320) name: fuelInlet
+  patch 11 (start: 408210 size: 1320) name: fuelOutlet
+  patch 12 (start: 409530 size: 1320) name: fuelSides
+  patch 13 (start: 410850 size: 1980) name: abpSides
+  patch 14 (start: 412830 size: 968) name: abpLeft
+
+End
+
+(rm -rf ./constant/polyMesh/sets);
+(topoSet -dict ./config/faceSets.topoSetDict);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : topoSet -dict ./config/faceSets.topoSetDict
+Date   : Jan 28 2021
+Time   : 15:29:36
+Host   : "fatima-HP-625"
+PID    : 5901
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created faceSet abpLeftFaces
+    Applying source patchToFace
+    Adding all faces of patch abpLeft ...
+    Found matching patch abpLeft with 968 faces.
+    faceSet abpLeftFaces now size 968
+Created faceSet abpSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch abpSides ...
+    Found matching patch abpSides with 1980 faces.
+    faceSet abpSidesFaces now size 1980
+Created faceSet cbpRightFaces
+    Applying source patchToFace
+    Adding all faces of patch cbpRight ...
+    Found matching patch cbpRight with 968 faces.
+    faceSet cbpRightFaces now size 968
+Created faceSet cbpSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch cbpSides ...
+    Found matching patch cbpSides with 1980 faces.
+    faceSet cbpSidesFaces now size 1980
+Created faceSet electrolyteSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch electrolyteSides ...
+    Found matching patch electrolyteSides with 660 faces.
+    faceSet electrolyteSidesFaces now size 660
+Created faceSet aclSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch aclSides ...
+    Found matching patch aclSides with 264 faces.
+    faceSet aclSidesFaces now size 264
+Created faceSet agdlSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch agdlSides ...
+    Found matching patch agdlSides with 2640 faces.
+    faceSet agdlSidesFaces now size 2640
+Created faceSet fuelSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch fuelSides ...
+    Found matching patch fuelSides with 1320 faces.
+    faceSet fuelSidesFaces now size 1320
+Created faceSet fuelInletFaces
+    Applying source patchToFace
+    Adding all faces of patch fuelInlet ...
+    Found matching patch fuelInlet with 1320 faces.
+    faceSet fuelInletFaces now size 1320
+Created faceSet fuelOutletFaces
+    Applying source patchToFace
+    Adding all faces of patch fuelOutlet ...
+    Found matching patch fuelOutlet with 1320 faces.
+    faceSet fuelOutletFaces now size 1320
+Created faceSet cclSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch cclSides ...
+    Found matching patch cclSides with 264 faces.
+    faceSet cclSidesFaces now size 264
+Created faceSet cgdlSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch cgdlSides ...
+    Found matching patch cgdlSides with 2640 faces.
+    faceSet cgdlSidesFaces now size 2640
+Created faceSet airSidesFaces
+    Applying source patchToFace
+    Adding all faces of patch airSides ...
+    Found matching patch airSides with 1320 faces.
+    faceSet airSidesFaces now size 1320
+Created faceSet airInletFaces
+    Applying source patchToFace
+    Adding all faces of patch airInlet ...
+    Found matching patch airInlet with 1320 faces.
+    faceSet airInletFaces now size 1320
+Created faceSet airOutletFaces
+    Applying source patchToFace
+    Adding all faces of patch airOutlet ...
+    Found matching patch airOutlet with 1320 faces.
+    faceSet airOutletFaces now size 1320
+Read set faceSet abpSidesFaces with size 1980
+    Applying source patchToFace
+    Adding all faces of patch fuelInlet ...
+    Found matching patch fuelInlet with 1320 faces.
+    faceSet abpSidesFaces now size 3300
+Read set faceSet abpSidesFaces with size 3300
+    Applying source patchToFace
+    Adding all faces of patch fuelOutlet ...
+    Found matching patch fuelOutlet with 1320 faces.
+    faceSet abpSidesFaces now size 4620
+Read set faceSet abpSidesFaces with size 4620
+    Applying source patchToFace
+    Adding all faces of patch fuelSides ...
+    Found matching patch fuelSides with 1320 faces.
+    faceSet abpSidesFaces now size 5940
+Read set faceSet cbpSidesFaces with size 1980
+    Applying source patchToFace
+    Adding all faces of patch airInlet ...
+    Found matching patch airInlet with 1320 faces.
+    faceSet cbpSidesFaces now size 3300
+Read set faceSet cbpSidesFaces with size 3300
+    Applying source patchToFace
+    Adding all faces of patch airOutlet ...
+    Found matching patch airOutlet with 1320 faces.
+    faceSet cbpSidesFaces now size 4620
+Read set faceSet cbpSidesFaces with size 4620
+    Applying source patchToFace
+    Adding all faces of patch airSides ...
+    Found matching patch airSides with 1320 faces.
+    faceSet cbpSidesFaces now size 5940
+Created faceSet fuelSidesFaces
+    Clearing faceSet
+    faceSet fuelSidesFaces now size 0
+Created faceSet fuelInletFaces
+    Clearing faceSet
+    faceSet fuelInletFaces now size 0
+Created faceSet fuelOutletFaces
+    Clearing faceSet
+    faceSet fuelOutletFaces now size 0
+Created faceSet airSidesFaces
+    Clearing faceSet
+    faceSet airSidesFaces now size 0
+Created faceSet airInletFaces
+    Clearing faceSet
+    faceSet airInletFaces now size 0
+Created faceSet airOutletFaces
+    Clearing faceSet
+    faceSet airOutletFaces now size 0
+End
+
+(rm -rf ./constant/polyMesh/sets/*_old);
+(topoSet -dict ./config/faceSetsAir.topoSetDict);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : topoSet -dict ./config/faceSetsAir.topoSetDict
+Date   : Jan 28 2021
+Time   : 15:29:40
+Host   : "fatima-HP-625"
+PID    : 5905
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created faceSet airInletFaces
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.001 -1e-06) (0.003 0.003 1e-06))
+    faceSet airInletFaces now size 120
+Read set faceSet airInletFaces with size 120
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.004 -1e-06) (0.003 0.006 1e-06))
+    faceSet airInletFaces now size 240
+Read set faceSet airInletFaces with size 240
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.007 -1e-06) (0.003 0.009 1e-06))
+    faceSet airInletFaces now size 360
+Read set faceSet airInletFaces with size 360
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.01 -1e-06) (0.003 0.012 1e-06))
+    faceSet airInletFaces now size 480
+Read set faceSet airInletFaces with size 480
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.013 -1e-06) (0.003 0.015 1e-06))
+    faceSet airInletFaces now size 600
+Read set faceSet airInletFaces with size 600
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.016 -1e-06) (0.003 0.018 1e-06))
+    faceSet airInletFaces now size 720
+Read set faceSet airInletFaces with size 720
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.019 -1e-06) (0.003 0.021 1e-06))
+    faceSet airInletFaces now size 840
+Created faceSet airOutletFaces
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.001 0.021999) (0.003 0.003 0.022001))
+    faceSet airOutletFaces now size 120
+Read set faceSet airOutletFaces with size 120
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.004 0.021999) (0.003 0.006 0.022001))
+    faceSet airOutletFaces now size 240
+Read set faceSet airOutletFaces with size 240
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.007 0.021999) (0.003 0.009 0.022001))
+    faceSet airOutletFaces now size 360
+Read set faceSet airOutletFaces with size 360
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.01 0.021999) (0.003 0.012 0.022001))
+    faceSet airOutletFaces now size 480
+Read set faceSet airOutletFaces with size 480
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.013 0.021999) (0.003 0.015 0.022001))
+    faceSet airOutletFaces now size 600
+Read set faceSet airOutletFaces with size 600
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.016 0.021999) (0.003 0.018 0.022001))
+    faceSet airOutletFaces now size 720
+Read set faceSet airOutletFaces with size 720
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0015 0.019 0.021999) (0.003 0.021 0.022001))
+    faceSet airOutletFaces now size 840
+Read set faceSet cbpSidesFaces with size 5940
+    Applying source faceToFace
+    Removing all faces from faceSet airInletFaces ...
+    faceSet cbpSidesFaces now size 5100
+Read set faceSet cbpSidesFaces with size 5100
+    Applying source faceToFace
+    Removing all faces from faceSet airOutletFaces ...
+    faceSet cbpSidesFaces now size 4260
+End
+
+(rm -rf ./constant/polyMesh/sets/*_old);
+(topoSet -dict ./config/faceSetsFuel.topoSetDict);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : topoSet -dict ./config/faceSetsFuel.topoSetDict
+Date   : Jan 28 2021
+Time   : 15:29:43
+Host   : "fatima-HP-625"
+PID    : 5909
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created faceSet fuelInletFaces
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.001 -1e-06) (0.0054544 0.003 1e-06))
+    faceSet fuelInletFaces now size 120
+Read set faceSet fuelInletFaces with size 120
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.004 -1e-06) (0.0054544 0.006 1e-06))
+    faceSet fuelInletFaces now size 240
+Read set faceSet fuelInletFaces with size 240
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.007 -1e-06) (0.0054544 0.009 1e-06))
+    faceSet fuelInletFaces now size 360
+Read set faceSet fuelInletFaces with size 360
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.01 -1e-06) (0.0054544 0.012 1e-06))
+    faceSet fuelInletFaces now size 480
+Read set faceSet fuelInletFaces with size 480
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.013 -1e-06) (0.0054544 0.015 1e-06))
+    faceSet fuelInletFaces now size 600
+Read set faceSet fuelInletFaces with size 600
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.016 -1e-06) (0.0054544 0.018 1e-06))
+    faceSet fuelInletFaces now size 720
+Read set faceSet fuelInletFaces with size 720
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.019 -1e-06) (0.0054544 0.021 1e-06))
+    faceSet fuelInletFaces now size 840
+Created faceSet fuelOutletFaces
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.001 0.021999) (0.0054544 0.003 0.022001))
+    faceSet fuelOutletFaces now size 120
+Read set faceSet fuelOutletFaces with size 120
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.004 0.021999) (0.0054544 0.006 0.022001))
+    faceSet fuelOutletFaces now size 240
+Read set faceSet fuelOutletFaces with size 240
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.007 0.021999) (0.0054544 0.009 0.022001))
+    faceSet fuelOutletFaces now size 360
+Read set faceSet fuelOutletFaces with size 360
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.01 0.021999) (0.0054544 0.012 0.022001))
+    faceSet fuelOutletFaces now size 480
+Read set faceSet fuelOutletFaces with size 480
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.013 0.021999) (0.0054544 0.015 0.022001))
+    faceSet fuelOutletFaces now size 600
+Read set faceSet fuelOutletFaces with size 600
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.016 0.021999) (0.0054544 0.018 0.022001))
+    faceSet fuelOutletFaces now size 720
+Read set faceSet fuelOutletFaces with size 720
+    Applying source boxToFace
+    Adding faces with centre within boxes 1((0.0039544 0.019 0.021999) (0.0054544 0.021 0.022001))
+    faceSet fuelOutletFaces now size 840
+Read set faceSet abpSidesFaces with size 5940
+    Applying source faceToFace
+    Removing all faces from faceSet fuelInletFaces ...
+    faceSet abpSidesFaces now size 5100
+Read set faceSet abpSidesFaces with size 5100
+    Applying source faceToFace
+    Removing all faces from faceSet fuelOutletFaces ...
+    faceSet abpSidesFaces now size 4260
+End
+
+(rm -rf ./constant/polyMesh/sets/*_old);
+(setsToZones -noFlipMap);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : setsToZones -noFlipMap
+Date   : Jan 28 2021
+Time   : 15:29:46
+Host   : "fatima-HP-625"
+PID    : 5913
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Searched : "constant/polyMesh/sets"
+Found    : 
+15
+(
+airOutletFaces
+cbpRightFaces
+cbpSidesFaces
+fuelInletFaces
+electrolyteSidesFaces
+cclSidesFaces
+fuelOutletFaces
+abpSidesFaces
+cgdlSidesFaces
+airInletFaces
+airSidesFaces
+agdlSidesFaces
+abpLeftFaces
+fuelSidesFaces
+aclSidesFaces
+)
+
+
+Adding set cbpRightFaces as a faceZone.
+Adding set cclSidesFaces as a faceZone.
+Adding set agdlSidesFaces as a faceZone.
+Adding set fuelOutletFaces as a faceZone.
+Adding set abpLeftFaces as a faceZone.
+Adding set cbpSidesFaces as a faceZone.
+Adding set abpSidesFaces as a faceZone.
+Adding set fuelInletFaces as a faceZone.
+Adding set cgdlSidesFaces as a faceZone.
+Adding set airInletFaces as a faceZone.
+Adding set electrolyteSidesFaces as a faceZone.
+Adding set fuelSidesFaces as a faceZone.
+Adding set aclSidesFaces as a faceZone.
+Adding set airOutletFaces as a faceZone.
+Adding set airSidesFaces as a faceZone.
+Writing mesh.
+End
+
+(createPatch -overwrite);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : createPatch -overwrite
+Date   : Jan 28 2021
+Time   : 15:29:49
+Host   : "fatima-HP-625"
+PID    : 5915
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading createPatchDict
+
+Patch 'abpLeft' already exists.  Only moving patch faces - type will remain the same
+Patch 'abpSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'fuelInlet' already exists.  Only moving patch faces - type will remain the same
+Patch 'fuelOutlet' already exists.  Only moving patch faces - type will remain the same
+Patch 'fuelSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'agdlSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'aclSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'electrolyteSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'cclSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'cgdlSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'airInlet' already exists.  Only moving patch faces - type will remain the same
+Patch 'airOutlet' already exists.  Only moving patch faces - type will remain the same
+Patch 'airSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'cbpSides' already exists.  Only moving patch faces - type will remain the same
+Patch 'cbpRight' already exists.  Only moving patch faces - type will remain the same
+
+Read 968 faces from faceSet abpLeftFaces
+Read 4260 faces from faceSet abpSidesFaces
+Read 840 faces from faceSet fuelInletFaces
+Read 840 faces from faceSet fuelOutletFaces
+Read 0 faces from faceSet fuelSidesFaces
+Read 2640 faces from faceSet agdlSidesFaces
+Read 264 faces from faceSet aclSidesFaces
+Read 660 faces from faceSet electrolyteSidesFaces
+Read 264 faces from faceSet cclSidesFaces
+Read 2640 faces from faceSet cgdlSidesFaces
+Read 840 faces from faceSet airInletFaces
+Read 840 faces from faceSet airOutletFaces
+Read 0 faces from faceSet airSidesFaces
+Read 4260 faces from faceSet cbpSidesFaces
+Read 968 faces from faceSet cbpRightFaces
+
+Doing topology modification to order faces.
+
+Synchronising points.
+
+Synchronising points.
+Points changed by average:0 max:0
+
+Removing patches with no faces in them.
+
+No patches removed.
+Writing repatched mesh to 0
+
+End
+
+(rm -rf constant/polyMesh/sets constant/polyMesh/*Zones);
+(topoSet -dict ./config/cellSets.topoSetDict);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : topoSet -dict ./config/cellSets.topoSetDict
+Date   : Jan 28 2021
+Time   : 15:29:56
+Host   : "fatima-HP-625"
+PID    : 5919
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet cbp
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0 0 0) (0.0015 0.022 0.022))
+    cellSet cbp now size 14520
+Read set cellSet cbp with size 14520
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0 0) (0.003 0.001 0.022))
+    cellSet cbp now size 15840
+Read set cellSet cbp with size 15840
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.003 0) (0.003 0.004 0.022))
+    cellSet cbp now size 17160
+Read set cellSet cbp with size 17160
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.006 0) (0.003 0.007 0.022))
+    cellSet cbp now size 18480
+Read set cellSet cbp with size 18480
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.009 0) (0.003 0.01 0.022))
+    cellSet cbp now size 19800
+Read set cellSet cbp with size 19800
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.012 0) (0.003 0.013 0.022))
+    cellSet cbp now size 21120
+Read set cellSet cbp with size 21120
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.015 0) (0.003 0.016 0.022))
+    cellSet cbp now size 22440
+Read set cellSet cbp with size 22440
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.018 0) (0.003 0.019 0.022))
+    cellSet cbp now size 23760
+Read set cellSet cbp with size 23760
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.021 0) (0.003 0.022 0.022))
+    cellSet cbp now size 25080
+Created cellSet air
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.003 0 0) (0.0034137 0.022 0.022))
+    cellSet air now size 21296
+Read set cellSet air with size 21296
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.001 0) (0.003 0.003 0.022))
+    cellSet air now size 23936
+Read set cellSet air with size 23936
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.004 0) (0.003 0.006 0.022))
+    cellSet air now size 26576
+Read set cellSet air with size 26576
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.007 0) (0.003 0.009 0.022))
+    cellSet air now size 29216
+Read set cellSet air with size 29216
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.01 0) (0.003 0.012 0.022))
+    cellSet air now size 31856
+Read set cellSet air with size 31856
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.013 0) (0.003 0.015 0.022))
+    cellSet air now size 34496
+Read set cellSet air with size 34496
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.016 0) (0.003 0.018 0.022))
+    cellSet air now size 37136
+Read set cellSet air with size 37136
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.019 0) (0.003 0.021 0.022))
+    cellSet air now size 39776
+Created cellSet electrolyte
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0034137 0 0) (0.0035407 0.022 0.022))
+    cellSet electrolyte now size 4840
+Created cellSet fuel
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0035407 0 0) (0.0039544 0.022 0.022))
+    cellSet fuel now size 21296
+Read set cellSet fuel with size 21296
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.001 0) (0.0054544 0.003 0.022))
+    cellSet fuel now size 23936
+Read set cellSet fuel with size 23936
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.004 0) (0.0054544 0.006 0.022))
+    cellSet fuel now size 26576
+Read set cellSet fuel with size 26576
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.007 0) (0.0054544 0.009 0.022))
+    cellSet fuel now size 29216
+Read set cellSet fuel with size 29216
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.01 0) (0.0054544 0.012 0.022))
+    cellSet fuel now size 31856
+Read set cellSet fuel with size 31856
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.013 0) (0.0054544 0.015 0.022))
+    cellSet fuel now size 34496
+Read set cellSet fuel with size 34496
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.016 0) (0.0054544 0.018 0.022))
+    cellSet fuel now size 37136
+Read set cellSet fuel with size 37136
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.019 0) (0.0054544 0.021 0.022))
+    cellSet fuel now size 39776
+Created cellSet abp
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0054544 0 0) (0.0069544 0.022 0.022))
+    cellSet abp now size 14520
+Read set cellSet abp with size 14520
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0 0) (0.0054544 0.001 0.022))
+    cellSet abp now size 15840
+Read set cellSet abp with size 15840
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.003 0) (0.0054544 0.004 0.022))
+    cellSet abp now size 17160
+Read set cellSet abp with size 17160
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.006 0) (0.0054544 0.007 0.022))
+    cellSet abp now size 18480
+Read set cellSet abp with size 18480
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.009 0) (0.0054544 0.01 0.022))
+    cellSet abp now size 19800
+Read set cellSet abp with size 19800
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.012 0) (0.0054544 0.013 0.022))
+    cellSet abp now size 21120
+Read set cellSet abp with size 21120
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.015 0) (0.0054544 0.016 0.022))
+    cellSet abp now size 22440
+Read set cellSet abp with size 22440
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.018 0) (0.0054544 0.019 0.022))
+    cellSet abp now size 23760
+Read set cellSet abp with size 23760
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.021 0) (0.0054544 0.022 0.022))
+    cellSet abp now size 25080
+End
+
+(rm -rf constant/polyMesh/sets/*_old);
+(setsToZones -noFlipMap);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : setsToZones -noFlipMap
+Date   : Jan 28 2021
+Time   : 15:30:00
+Host   : "fatima-HP-625"
+PID    : 5923
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Searched : "constant/polyMesh/sets"
+Found    : 
+5
+(
+electrolyte
+air
+cbp
+fuel
+abp
+)
+
+
+Adding set abp as a cellZone.
+Adding set electrolyte as a cellZone.
+Adding set fuel as a cellZone.
+Adding set cbp as a cellZone.
+Adding set air as a cellZone.
+Writing mesh.
+End
+
+(topoSet -dict ./config/faceSetsIFaces.topoSetDict);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : topoSet -dict ./config/faceSetsIFaces.topoSetDict
+Date   : Jan 28 2021
+Time   : 15:30:04
+Host   : "fatima-HP-625"
+PID    : 5925
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created faceSet iFaces
+    Applying source cellToFace
+    Adding faces according to cellSet cbp ...
+    faceSet iFaces now size 82958
+Read set faceSet iFaces with size 82958
+    Applying source cellToFace
+    Adding faces according to cellSet air ...
+    faceSet iFaces now size 10208
+Created faceSet aFaces
+    Applying source cellToFace
+    Adding faces according to cellSet air ...
+    faceSet aFaces now size 127208
+Read set faceSet aFaces with size 127208
+    Applying source cellToFace
+    Adding faces according to cellSet electrolyte ...
+    faceSet aFaces now size 968
+Read set faceSet iFaces with size 10208
+    Applying source faceToFace
+    Adding all faces from faceSet aFaces ...
+    faceSet iFaces now size 11176
+Created faceSet bFaces
+    Applying source cellToFace
+    Adding faces according to cellSet electrolyte ...
+    faceSet bFaces now size 15818
+Read set faceSet bFaces with size 15818
+    Applying source cellToFace
+    Adding faces according to cellSet fuel ...
+    faceSet bFaces now size 968
+Read set faceSet iFaces with size 11176
+    Applying source faceToFace
+    Adding all faces from faceSet bFaces ...
+    faceSet iFaces now size 12144
+Created faceSet cFaces
+    Applying source cellToFace
+    Adding faces according to cellSet fuel ...
+    faceSet cFaces now size 127208
+Read set faceSet cFaces with size 127208
+    Applying source cellToFace
+    Adding faces according to cellSet abp ...
+    faceSet cFaces now size 10208
+Read set faceSet iFaces with size 12144
+    Applying source faceToFace
+    Adding all faces from faceSet cFaces ...
+    faceSet iFaces now size 22352
+End
+
+(rm -rf constant/polyMesh/sets/*_old);
+(rm constant/polyMesh/sets/[abc]Faces);
+(setsToZones -noFlipMap);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : setsToZones -noFlipMap
+Date   : Jan 28 2021
+Time   : 15:30:09
+Host   : "fatima-HP-625"
+PID    : 5933
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Searched : "constant/polyMesh/sets"
+Found    : 
+6
+(
+iFaces
+electrolyte
+air
+cbp
+fuel
+abp
+)
+
+
+Adding set iFaces as a faceZone.
+Overwriting contents of existing cellZone 0 with that of set abp.
+Overwriting contents of existing cellZone 1 with that of set electrolyte.
+Overwriting contents of existing cellZone 2 with that of set fuel.
+Overwriting contents of existing cellZone 3 with that of set cbp.
+Overwriting contents of existing cellZone 4 with that of set air.
+Writing mesh.
+End
+
+(splitMeshRegions -cellZonesOnly);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : splitMeshRegions -cellZonesOnly
+Date   : Jan 28 2021
+Time   : 15:30:12
+Host   : "fatima-HP-625"
+PID    : 5936
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Creating single patch per inter-region interface.
+
+Using current cellZones to split mesh into regions. This requires all cells to be in one and only one cellZone.
+
+
+Number of regions:5
+
+Writing region per cell file (for manual decomposition) to "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/constant/cellToRegion"
+
+Writing region per cell as volScalarField to "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/0/cellToRegion"
+
+Region	Cells
+------	-----
+0	25080
+1	4840
+2	39776
+3	25080
+4	39776
+
+Region	Zone	Name
+------	----	----
+0	0	abp
+1	1	electrolyte
+2	2	fuel
+3	3	cbp
+4	4	air
+
+Sizes of interfaces between regions:
+
+Interface	Region	Region	Faces
+---------	------	------	-----
+0		3	4	10208
+1		1	2	968
+2		0	2	10208
+3		1	4	968
+
+Reading volScalarField T
+Reading volScalarField k
+Reading volScalarField cellToRegion
+
+
+Adding patches
+
+
+Adding patches
+
+For interface between region cbp and air added patches
+    15	cbp_to_air
+    16	air_to_cbp
+For interface between region electrolyte and fuel added patches
+    17	electrolyte_to_fuel
+    18	fuel_to_electrolyte
+For interface between region abp and fuel added patches
+    19	abp_to_fuel
+    20	fuel_to_abp
+For interface between region electrolyte and air added patches
+    21	electrolyte_to_air
+    22	air_to_electrolyte
+
+Region 0
+-------- 
+Creating mesh for region 0 abp
+Testing:"/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/abp/fvSchemes"
+Mapping fields
+Mapping field cellToRegion
+Mapping field T
+Mapping field k
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region0 points back to base mesh.
+Writing map faceRegionAddressing from region0 faces back to base mesh.
+Writing map cellRegionAddressing from region0 cells back to base mesh.
+Writing map boundaryRegionAddressing from region0 boundary back to base mesh.
+
+Region 1
+-------- 
+Creating mesh for region 1 electrolyte
+Testing:"/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/electrolyte/fvSchemes"
+Mapping fields
+Mapping field cellToRegion
+Mapping field T
+Mapping field k
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region1 points back to base mesh.
+Writing map faceRegionAddressing from region1 faces back to base mesh.
+Writing map cellRegionAddressing from region1 cells back to base mesh.
+Writing map boundaryRegionAddressing from region1 boundary back to base mesh.
+
+Region 2
+-------- 
+Creating mesh for region 2 fuel
+Testing:"/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/fuel/fvSchemes"
+Mapping fields
+Mapping field cellToRegion
+Mapping field T
+Mapping field k
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region2 points back to base mesh.
+Writing map faceRegionAddressing from region2 faces back to base mesh.
+Writing map cellRegionAddressing from region2 cells back to base mesh.
+Writing map boundaryRegionAddressing from region2 boundary back to base mesh.
+
+Region 3
+-------- 
+Creating mesh for region 3 cbp
+Testing:"/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/cbp/fvSchemes"
+Mapping fields
+Mapping field cellToRegion
+Mapping field T
+Mapping field k
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region3 points back to base mesh.
+Writing map faceRegionAddressing from region3 faces back to base mesh.
+Writing map cellRegionAddressing from region3 cells back to base mesh.
+Writing map boundaryRegionAddressing from region3 boundary back to base mesh.
+
+Region 4
+-------- 
+Creating mesh for region 4 air
+Testing:"/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/air/fvSchemes"
+Mapping fields
+Mapping field cellToRegion
+Mapping field T
+Mapping field k
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region4 points back to base mesh.
+Writing map faceRegionAddressing from region4 faces back to base mesh.
+Writing map cellRegionAddressing from region4 cells back to base mesh.
+Writing map boundaryRegionAddressing from region4 boundary back to base mesh.
+End
+
+(cp -r 0.001/* ./constant);
+(rm -rf 0.001);
+(topoSet -region air -dict config/cellSetsAir.topoSetDict);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : topoSet -region air -dict config/cellSetsAir.topoSetDict
+Date   : Jan 28 2021
+Time   : 15:30:24
+Host   : "fatima-HP-625"
+PID    : 5951
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh air for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet air
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.003 0 0) (0.0034137 0.022 0.022))
+    cellSet air now size 21296
+Read set cellSet air with size 21296
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.001 0) (0.003 0.003 0.022))
+    cellSet air now size 23936
+Read set cellSet air with size 23936
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.004 0) (0.003 0.006 0.022))
+    cellSet air now size 26576
+Read set cellSet air with size 26576
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.007 0) (0.003 0.009 0.022))
+    cellSet air now size 29216
+Read set cellSet air with size 29216
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.01 0) (0.003 0.012 0.022))
+    cellSet air now size 31856
+Read set cellSet air with size 31856
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.013 0) (0.003 0.015 0.022))
+    cellSet air now size 34496
+Read set cellSet air with size 34496
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.016 0) (0.003 0.018 0.022))
+    cellSet air now size 37136
+Read set cellSet air with size 37136
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0015 0.019 0) (0.003 0.021 0.022))
+    cellSet air now size 39776
+Created cellSet cgdl
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.003 0 0) (0.00341 0.022 0.022))
+    cellSet cgdl now size 19360
+Created cellSet ccl
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.00341 0 0) (0.0034137 0.022 0.022))
+    cellSet ccl now size 1936
+End
+
+(setsToZones -noFlipMap -region air);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : setsToZones -noFlipMap -region air
+Date   : Jan 28 2021
+Time   : 15:30:25
+Host   : "fatima-HP-625"
+PID    : 5953
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh air for time = 0
+
+Searched : "constant/polyMesh/sets"
+Found    : 
+3
+(
+cgdl
+air
+ccl
+)
+
+
+Adding set cgdl as a cellZone.
+Adding set ccl as a cellZone.
+Overwriting contents of existing cellZone 4 with that of set air.
+Writing mesh.
+End
+
+(topoSet -region electrolyte -dict config/cellSetsElectrolyte.topoSetDict);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : topoSet -region electrolyte -dict config/cellSetsElectrolyte.topoSetDict
+Date   : Jan 28 2021
+Time   : 15:30:26
+Host   : "fatima-HP-625"
+PID    : 5955
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh electrolyte for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet electrolyte
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0034137 0 0) (0.0035407 0.022 0.022))
+    cellSet electrolyte now size 4840
+Created cellSet layer1
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0034137 0 0) (0.0035407 0.022 0.022))
+    cellSet layer1 now size 4840
+End
+
+(setsToZones -noFlipMap -region electrolyte);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : setsToZones -noFlipMap -region electrolyte
+Date   : Jan 28 2021
+Time   : 15:30:27
+Host   : "fatima-HP-625"
+PID    : 5957
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh electrolyte for time = 0
+
+Searched : "constant/polyMesh/sets"
+Found    : 
+2
+(
+electrolyte
+layer1
+)
+
+
+Adding set layer1 as a cellZone.
+Overwriting contents of existing cellZone 1 with that of set electrolyte.
+Writing mesh.
+End
+
+(topoSet -region fuel -dict config/cellSetsFuel.topoSetDict);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : topoSet -region fuel -dict config/cellSetsFuel.topoSetDict
+Date   : Jan 28 2021
+Time   : 15:30:27
+Host   : "fatima-HP-625"
+PID    : 5959
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh fuel for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet fuel
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0035407 0 0) (0.0039544 0.022 0.022))
+    cellSet fuel now size 21296
+Read set cellSet fuel with size 21296
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.001 0) (0.0054544 0.003 0.022))
+    cellSet fuel now size 23936
+Read set cellSet fuel with size 23936
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.004 0) (0.0054544 0.006 0.022))
+    cellSet fuel now size 26576
+Read set cellSet fuel with size 26576
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.007 0) (0.0054544 0.009 0.022))
+    cellSet fuel now size 29216
+Read set cellSet fuel with size 29216
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.01 0) (0.0054544 0.012 0.022))
+    cellSet fuel now size 31856
+Read set cellSet fuel with size 31856
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.013 0) (0.0054544 0.015 0.022))
+    cellSet fuel now size 34496
+Read set cellSet fuel with size 34496
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.016 0) (0.0054544 0.018 0.022))
+    cellSet fuel now size 37136
+Read set cellSet fuel with size 37136
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0039544 0.019 0) (0.0054544 0.021 0.022))
+    cellSet fuel now size 39776
+Created cellSet acl
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0035407 0 0) (0.0035444 0.022 0.022))
+    cellSet acl now size 1936
+Created cellSet agdl
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0035444 0 0) (0.0039544 0.022 0.022))
+    cellSet agdl now size 19360
+End
+
+(setsToZones -noFlipMap -region fuel);		
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : setsToZones -noFlipMap -region fuel
+Date   : Jan 28 2021
+Time   : 15:30:28
+Host   : "fatima-HP-625"
+PID    : 5961
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh fuel for time = 0
+
+Searched : "constant/polyMesh/sets"
+Found    : 
+3
+(
+agdl
+fuel
+acl
+)
+
+
+Overwriting contents of existing cellZone 2 with that of set fuel.
+Adding set acl as a cellZone.
+Adding set agdl as a cellZone.
+Writing mesh.
+End
+
+(rm -f constant/[aacef]*/[kpTU] constant/[aacef]*/rho);
+(rm -f constant/[aacef]*/Y* constant/[aacef]*/diff*);
+(cp -rf ./system/controlDict.run ./system/controlDict);
+(./parprep.csh | tee log.parprep);
+/bin/sh: 1: ./parprep.csh: not found
+( pemfcSinglephaseNonIsothermalSolver | tee log.run );
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : pemfcSinglephaseNonIsothermalSolver
+Date   : Jan 28 2021
+Time   : 15:30:30
+Host   : "fatima-HP-625"
+PID    : 5974
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading cell properties
+
+galvanostatic run
+    V     = V [1 2 -3 0 0 -1 0] 0.6
+    Ibar0 = Ibar0 [0 -2 0 0 0 1 0] 40000
+    Rhat  = Rhat [1 4 -3 0 0 -2 0] 1e-05
+    Rhat0  = Rhat0 [1 4 -3 0 0 -2 0] 1e-05
+CL electronic conductivity(kappaCl) = kappaCl [-1 -2 3 0 0 2 0] 1000
+GDL electronic conductivity(kappaGdl) = kappaGdl [-1 -2 3 0 0 2 0] 5000
+GDL - BP Contact resistance (rContact)= rContact [1 4 -3 0 0 -2 0] 2e-06
+BP electronic conductivity(kappaBp) = kappaBp [-1 -2 3 0 0 2 0] 83000
+CL thickness (tCl) = tCl [0 1 0 0 0 0 0] 3.7e-06
+GDL thickness (tGdl) = tGdl [0 1 0 0 0 0 0] 0.00041
+BP thickness (tBp) = tBp [0 1 0 0 0 0 0] 0.003
+concentration overpotential constant = etaConCaConstant [0 0 0 0 0 0 0] 0.25
+
+    Tinit = Tinit [0 0 0 1 0 0 0] 353
+
+    anodeName              = fuel_to_electrolyte
+    fuelInletName          = fuelInlet
+    fuelOutletName         = fuelOutlet
+    fuelAbpName            = fuel_to_abp
+    cathodeName            = air_to_electrolyte
+    airInletName           = airInlet
+    airOutletName          = airOutlet
+    airCbpName             = air_to_cbp
+    electrolyteAnodeName   = electrolyte_to_fuel
+    electrolyteCathodeName = electrolyte_to_air
+    abpFuelName            = abp_to_fuel
+    cbpAirName             = cbp_to_air
+
+Reading cell field T
+
+Reading cell field k
+
+Reading anode bipolarPlate properties
+
+  anode bipolarPlate
+    rhoAnodeBipolarPlate = rho [1 -3 0 0 0 0 0] 1880
+    CpAnodeBipolarPlate  = Cp [0 2 -2 -1 0 0 0] 875
+    kAnodeBipolarPlate   = k [1 1 -3 -1 0 0 0] 10.7
+
+Reading cathode bipolarPlate properties
+
+  cathode bipolarPlate
+    rhoCathodeBipolarPlate = rho [1 -3 0 0 0 0 0] 1880
+    CpCathodeBipolarPlate  = Cp [0 2 -2 -1 0 0 0] 875
+    kCathodeBipolarPlate   = k [1 1 -3 -1 0 0 0] 10.7
+
+Creating anode bipolar plate field TanodeBP
+Creating cathode bipolar plate field TcathodeBP
+Reading fuel properties
+
+    muF       = mu [1 -1 -1 0 0 0 0] 1.155227e-05
+    rhoF      = rho [1 -3 0 0 0 0 0] 1.138
+    CpF       = Cp [0 2 -2 -1 0 0 0] 3743
+    kF        = k [1 1 -3 -1 0 0 0] 0.01805811
+    dHydFuel  = dHyd [0 1 0 0 0 0 0] 0.001
+
+Creating fuel field p
+Creating fuel field rho
+Creating fuel field mu
+Creating fuel field U
+Creating fuel face flux field phi
+Creating fuel field Tfuel
+Creating fuel field cp
+Creating fuel field k
+Creating fuel porous zones
+Creating porosity model list from porosityProperties
+
+Porosity region agdl:
+    selecting model: myDarcyForchheimer
+    creating porous zone: agdl
+Porosity region acl:
+    selecting model: myDarcyForchheimer
+    creating porous zone: acl
+    number of porous zones = 2
+    zone 1(6) agdl : size = 19360; porosity = 0.6
+    zone 1(5) acl : size = 1936; porosity = 0.4
+
+
+Reading fuel pemfcSpeciesProperties
+               name    MW[kg/kmol]     ne      rSign   hForm       sForm   
+fuelSpecies[0] CH3OH   32.04           6       -1      -201300     239.9   
+fuelSpecies[1] H2O     18.016          6       -1      -241826     188.835 
+fuelSpecies[2] CO2     44.01           6       1       -393520     213.79  
+
+fuelInertSpecie = H2O
+
+CpCoeffs(CH3OH) 45.89 -138.48 709.4 -1125.82 917.63 -384.69 65.53
+CpCoeffs(H2O) 37.373 -41.205 146.01 -217.08 181.54 -79.409 14.015
+CpCoeffs(CO2) 4.3669 204.6 -471.33 657.88 -519.9 214.58 -35.992
+
+muCoeffs(CH3OH) 11.25 181.4 612.85 -1097.2 910.24 -378.75 63.45
+muCoeffs(H2O) -6.7541 244.93 419.5 -522.38 348.12 -126.96 19.591
+muCoeffs(CO2) -20.434 680.07 -432.49 244.22 -85.929 14.45 -0.4564
+
+kCoeffs(CH3OH) 1.6778 -12.5727 55.8068 -62.8414 41.0951 -14.9573 2.32
+kCoeffs(H2O) 2.0103 -7.9139 35.922 -41.39 35.993 -18.974 4.1531
+kCoeffs(CO2) 2.8888 -27.018 129.65 -233.29 216.83 -101.12 18.698
+
+ToddYoung checks
+CH3OH
+    Cp(353) = 48.14942
+    mu(353) = 115.5687
+    k(353)  = 1.990069
+H2O
+    Cp(353) = 33.88381
+    mu(353) = 113.7492
+    k(353)  = 2.33519
+CO2
+    Cp(353) = 39.83071
+    mu(353) = 175.2251
+    k(353)  = 2.094009
+
+Reading electrolyte properties
+
+    rhoElectrolyte  = rho [1 -3 0 0 0 0 0] 1980
+    CpElectrolyte   = Cp [0 2 -2 -1 0 0 0] 1050
+    kElectrolyte    = k [1 1 -3 -1 0 0 0] 0.67
+    sigmaElectrolyte    = sigma [-1 -2 3 0 0 2 0] 17
+
+Reading activation parameters
+
+    i0CathodeElectrolyteReference    = i0Reference [0 -2 0 0 0 1 0] 0.0139
+    ECathodeElectrolyte    = ECathode [1 2 -2 0 -1 0 0] 73220
+    alphaCathodeElectrolyte    = alphaCathode [0 0 0 0 0 0 0] 1
+
+creating current density field
+
+creating voltage field
+
+creating Nernst potential field
+
+Creating electrolyte field Telectrolyte
+Reading air properties
+
+    muA   = mu [1 -1 -1 0 0 0 0] 1.5158e-05
+    rhoA  = rho [1 -3 0 0 0 0 0] 0.914
+    CpA   = Cp [0 2 -2 -1 0 0 0] 1108.85
+    kA    = k [1 1 -3 -1 0 0 0] 0.02867
+    dHydAir  = dHyd [0 1 0 0 0 0 0] 0.001
+
+Creating air field p
+Creating air field rho
+Creating air field mu
+Creating air field U
+Creating air face flux field phi
+Creating air field Tair
+Creating air field cp
+Creating air field k
+Creating air porous zones
+Creating porosity model list from porosityProperties
+
+Porosity region cgdl:
+    selecting model: myDarcyForchheimer
+    creating porous zone: cgdl
+Porosity region ccl:
+    selecting model: myDarcyForchheimer
+    creating porous zone: ccl
+    number of porous zones = 2
+    zone 1(5) cgdl : size = 19360; porosity = 0.5
+    zone 1(6) ccl : size = 1936; porosity = 0.4
+
+
+Reading air pemfcSpeciesProperties
+              name    MW[kg/kmol]     ne      rSign   hForm       sForm   
+airSpecies[0] O2      32              4       -1      0           205.152 
+airSpecies[1] N2      28.02           0       0       0           191.609 
+airSpecies[2] H2O     18.016          2       1       -241834.9   188.835 
+
+airInertSpecie = N2
+
+CpCoeffs(O2) 34.85 -57.975 203.68 -300.37 231.72 -91.821 14.776
+CpCoeffs(N2) 29.027 4.8987 -38.04 105.17 -113.56 55.554 -10.35
+CpCoeffs(H2O) 37.373 -41.205 146.01 -217.08 181.54 -79.409 14.015
+
+muCoeffs(O2) -1.6918 889.75 -892.79 905.98 -598.36 221.64 -34.754
+muCoeffs(N2) 1.2719 771.45 -809.2 832.47 -553.93 206.15 -32.43
+muCoeffs(H2O) -6.7541 244.93 419.5 -522.38 348.12 -126.96 19.591
+
+kCoeffs(O2) -0.1857 11.118 -7.3734 6.713 -4.1797 1.491 -0.2278
+kCoeffs(N2) -0.3216 14.81 -25.473 38.837 -32.133 13.493 -2.2741
+kCoeffs(H2O) 2.0103 -7.9139 35.922 -41.39 35.993 -18.974 4.1531
+
+ToddYoung checks
+O2
+    Cp(353) = 29.67613
+    mu(353) = 232.8482
+    k(353)  = 3.058278
+N2
+    Cp(353) = 29.16341
+    mu(353) = 201.8441
+    k(353)  = 3.011103
+H2O
+    Cp(353) = 33.88381
+    mu(353) = 113.7492
+    k(353)  = 2.33519
+
+
+Reading rxnProperties
+rxnSpCoef contents: 
+5
+(
+CO2
+O2
+CH3OH
+e
+H2O
+)
+
+rxnSpecies stoichiometric coefficients: 
+stoichCoeff O2 = 1.5
+stoichCoeff H2O = 2
+stoichCoeff CH3OH = 1
+stoichCoeff CO2 = 1
+stoichCoeff e = 6
+
+Setting special patch IDs
+
+    electrolyte thickness (calculated) tMem = tMem [0 1 0 0 0 0 0] 0.000127
+
+
+Creating fuel diffusivity models
+zone 2 fuel
+Selecting diffusivity model fixedDiffusivity
+anodeZone 0, fuelZone 6: agdl
+size = 19360
+Selecting diffusivity model fixedDiffusivity
+anodeZone 1, fuelZone 5: acl
+size = 1936
+Selecting diffusivity model fixedDiffusivity
+
+Creating air diffusivity models
+zone 4 air
+Selecting diffusivity model binaryFSG
+cathodeZone 0, airZone 5: cgdl
+size = 19360
+Selecting diffusivity model fixedDiffusivity
+cathodeZone 1, airZone 6: ccl
+size = 1936
+Selecting diffusivity model fixedDiffusivity
+
+Starting time loop
+
+Time = 1
+
+Tfuel min mean max = 353    353    353
+Tair min mean max  = 353    353    353
+min,mean,max(rhoFuel): 1.02623   1.02623   1.02623
+min,mean,max(rhoAir): 0.9139413   0.9139413   0.9139413
+min,mean,max(muFuel): 1.153868e-05   1.153868e-05   1.153868e-05
+min,mean,max(muAir): 1.948307e-05   1.948307e-05   1.948307e-05
+min,mean,max(kFuel): 0.02024581   0.02024581   0.02024581
+min,mean,max(kAir): 0.02919151   0.02919151   0.02919151
+
+Solving air flow
+--> FOAM Warning : 
+    From function Foam::fv::gaussConvectionScheme<Type>::gaussConvectionScheme(const Foam::fvMesh&, const surfaceScalarField&, Foam::Istream&) [with Type = Foam::Vector<double>; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>]
+    in file finiteVolume/convectionSchemes/gaussConvectionScheme/gaussConvectionScheme.H at line 124
+    Reading "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/air/fvSchemes.divSchemes.div(phi,U)" at line 32
+    Unbounded 'Gauss' div scheme used in steady-state solver, use 'bounded Gauss' to ensure boundedness.
+    To remove this warning switch off 'warnUnboundedGauss' in "/home/fatima/OpenFOAM/OpenFOAM-4.0/etc/controlDict"
+DILUPBiCG:  Solving for Ux, Initial residual = 0.9999968, Final residual = 1.5478e-10, No Iterations 4
+DILUPBiCG:  Solving for Uy, Initial residual = 0.999979, Final residual = 4.87157e-12, No Iterations 5
+DILUPBiCG:  Solving for Uz, Initial residual = 1, Final residual = 2.371463e-10, No Iterations 4
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 7.897306e-10, No Iterations 238
+time step continuity errors : sum local = 2.027143e-06, global = -3.367083e-08
+DICPCG:  Solving for p, Initial residual = 0.0403882, Final residual = 8.410109e-10, No Iterations 215
+time step continuity errors : sum local = 2.235446e-06, global = -6.680733e-08
+
+Solving fuel flow
+--> FOAM Warning : 
+    From function Foam::fv::gaussConvectionScheme<Type>::gaussConvectionScheme(const Foam::fvMesh&, const surfaceScalarField&, Foam::Istream&) [with Type = Foam::Vector<double>; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>]
+    in file finiteVolume/convectionSchemes/gaussConvectionScheme/gaussConvectionScheme.H at line 124
+    Reading "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/fuel/fvSchemes.divSchemes.div(phi,U)" at line 32
+    Unbounded 'Gauss' div scheme used in steady-state solver, use 'bounded Gauss' to ensure boundedness.
+    To remove this warning switch off 'warnUnboundedGauss' in "/home/fatima/OpenFOAM/OpenFOAM-4.0/etc/controlDict"
+DILUPBiCG:  Solving for Ux, Initial residual = 0.9999968, Final residual = 1.317541e-11, No Iterations 3
+DILUPBiCG:  Solving for Uy, Initial residual = 0.9997891, Final residual = 7.226337e-10, No Iterations 3
+DILUPBiCG:  Solving for Uz, Initial residual = 1, Final residual = 2.37403e-10, No Iterations 4
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 6.789517e-10, No Iterations 223
+time step continuity errors : sum local = 3.768277e-06, global = -1.561403e-08
+DICPCG:  Solving for p, Initial residual = 0.0918586, Final residual = 9.048516e-10, No Iterations 206
+time step continuity errors : sum local = 7.246305e-06, global = -2.706931e-08
+ReFuel = 1232.81
+ReAir  = 144.5844
+
+fuelSpecies CH3OH
+
+fuelDiffModels[0]
+  zone size = 39776
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 2.8e-09
+
+fuelDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 1.3e-09
+
+fuelDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 7.08e-10
+
+diffSpFuel[CH3OH]
+    internalField min mean max = 7.08e-10  1.968088e-09  2.8e-09
+
+fuelSpecies CO2
+
+fuelDiffModels[0]
+  zone size = 39776
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 2.8e-09
+
+fuelDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 1.3e-09
+
+fuelDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 7.08e-10
+
+diffSpFuel[CO2]
+    internalField min mean max = 7.08e-10  1.968088e-09  2.8e-09
+
+airSpecies O2
+
+airDiffModels[0]
+  zone size = 39776
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: O2 31.9988 16.3
+   background speciesB molWt diffVol: N2 28.0134 18.5
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: O2 31.9988 16.3
+   background speciesB molWt diffVol: H2O 18.01534 13.1
+
+airDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+airDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 7.785e-06
+
+diffSpAir[O2]
+    internalField min mean max = 7.785e-06  1.875078e-05  2.939586e-05
+
+airSpecies H2O
+
+airDiffModels[0]
+  zone size = 39776
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: H2O 18.01534 13.1
+   background speciesB molWt diffVol: O2 31.9988 16.3
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: H2O 18.01534 13.1
+   background speciesB molWt diffVol: N2 28.0134 18.5
+
+airDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+airDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 7.785e-06
+
+diffSpAir[H2O]
+    internalField min mean max = 7.785e-06  2.127406e-05  3.48358e-05
+
+Solving air scalars
+ Yair[0].name() = YO2air
+DILUPBiCG:  Solving for YO2air, Initial residual = 0.9999752, Final residual = 7.536879e-10, No Iterations 35
+ Yair[1].name() = YN2air
+ Yair[2].name() = YH2Oair
+DILUPBiCG:  Solving for YH2Oair, Initial residual = 0.9999809, Final residual = 9.886249e-10, No Iterations 35
+inertIndex = 1
+min,mean,max(YO2air): 0.2 , 0.2 , 0.2
+min,mean,max(YN2air): 0.65 , 0.65 , 0.65
+min,mean,max(YH2Oair): 0.15 , 0.15 , 0.15
+
+Solving fuel scalars
+ Yfuel[0].name() = YCH3OHfuel
+DILUPBiCG:  Solving for YCH3OHfuel, Initial residual = 0.9999488, Final residual = 1.36372e-10, No Iterations 15
+ Yfuel[1].name() = YH2Ofuel
+ Yfuel[2].name() = YCO2fuel
+DILUPBiCG:  Solving for YCO2fuel:  solution singularity
+inertIndex = 1
+min,mean,max(YCH3OHfuel): 0.8999999 , 0.9 , 0.9000002
+min,mean,max(YH2Ofuel): 0.09999982 , 0.1 , 0.1000001
+min,mean,max(YCO2fuel): 1e-15 , 1e-15 , 1e-15
+
+Solving electrochemistry
+min,max(anodeT): 353 , 353
+min,max(cathodeT): 353 , 353
+min,mean,max(XCH3OH): 0.8350017 , 0.8350018 , 0.8350021
+min,mean,max(XH2O): 0.1649979 , 0.1649982 , 0.1649983
+min,mean,max(XCO2): 1e-15 , 1e-15 , 1e-15
+min,mean,max(XO2): 0.1654593 , 0.1654593 , 0.1654593
+min,mean,max(XH2O): 0.2204164 , 0.2204164 , 0.2204164
+O2  1.5
+   mean H(T) = 2426.383
+   mean S(T) = 315.1971
+H2O  2
+   mean H(T) = -479971.3
+   mean S(T) = 389.0555
+CH3OH  1
+   mean H(T) = -198768.9
+   mean S(T) = 247.6835
+H2O  2
+   mean H(T) = -479953.5
+   mean S(T) = 389.0555
+CO2  1
+   mean H(T) = -391402.8
+   mean S(T) = 220.3025
+ mean deltaHrxn = -195078.1
+ mean cathodeT  = 353
+ mean deltaSrxn = -342.5781
+ mean TdeltaS   = -120930.1
+ mean deltaG    = -74148.01
+
+min,mean,max Nernst = 0.2856569  0.285657  0.285657
+
+min,max(pSatAnode): 47024.19 , 47024.19
+min,max(pSatCathode): 47024.19 , 47024.19
+min,mean,max(wActivityAnode): 4.405889e-316 , 0.5831351  0.5855548
+min,mean,max(wActivityCathode): 0.4749887 , 0.4757572  0.4765191
+min,mean,max(a): 0.4764779 , 1.058892  1.062074
+min, mean, max (lambda): 3.07601 , 14.04034  14.0869
+min,mean,max(sigma): 2.26981  12.4625  12.50579
+min,mean,max (RiMem) = 1.01553e-05  1.033484e-05  5.245266e-05
+min,mean,max (ASR)= 1.451942e-05 1.469897e-05 5.681679e-05
+min,mean,max (cathodeT) = 353  353  353
+min,mean,max (i0Ca) = 0.01375349  0.01375349  0.01375349
+min,mean,max (iLCa) = 41859.53  41859.54  41859.54
+
+
+--> FOAM FATAL ERROR: 
+Root is not bracketed.  f(x0) = -0.4447722 f(x1) = -4.782682
+
+    From function Foam::scalar Foam::RiddersRoot<Func>::root
+(
+    const scalar x0,
+    const scalar x1
+) const
+    in file ../src/tools/RiddersRoot/RiddersRoot.C at line 190.
+
+FOAM aborting
+
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::error::abort() at ??:?
+#2  ? at ~/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/pemfcSinglePhaseNonIsothermalSolver/applications/../src/tools/RiddersRoot/RiddersRoot.C:196
+#3  ? at ~/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/pemfcSinglePhaseNonIsothermalSolver/applications/../src/electrochemistry/totalCurrent.H:24 (discriminator 54)
+#4  __libc_start_main in "/lib/x86_64-linux-gnu/libc.so.6"
+#5  ? at ??:?
+Aborted (core dumped)
+(reconstructPar);
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : reconstructPar
+Date   : Jan 28 2021
+Time   : 15:30:50
+Host   : "fatima-HP-625"
+PID    : 6010
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+--> FOAM FATAL ERROR: 
+No processor* directories found
+
+    From function int main(int, char**)
+    in file reconstructPar.C at line 186.
+
+FOAM exiting
+
+Makefile:59: fallo en las instrucciones para el objetivo 'reconstruct'
+make: *** [reconstruct] Error 1

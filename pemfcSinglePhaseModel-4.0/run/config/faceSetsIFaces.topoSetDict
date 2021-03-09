@@ -1,0 +1,154 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Put the faces that separate regions into a faceSet iFaces
+// regions:
+           // cbp
+           // air
+           // electrolyte
+           // fuel
+           // abp
+
+actions
+(
+// interface faces
+// ---------------
+    // begin with cbp/air interface
+    {
+        name    iFaces;
+        type    faceSet;
+        action  new;
+        source  cellToFace;
+        sourceInfo
+        {
+            set    cbp;
+            option all;
+        }
+    }
+    {
+        name    iFaces;
+        type    faceSet;
+        action  subset;
+        source  cellToFace;
+        sourceInfo
+        {
+            set    air;
+            option all;
+        }
+    }
+    // add air/electrolyte interface
+    {
+        name    aFaces;
+        type    faceSet;
+        action  new;
+        source  cellToFace;
+        sourceInfo
+        {
+            set    air;
+            option all;
+        }
+    }
+    {
+        name    aFaces;
+        type    faceSet;
+        action  subset;
+        source  cellToFace;
+        sourceInfo
+        {
+            set    electrolyte;
+            option all;
+        }
+    }
+    {
+        name    iFaces;
+        type    faceSet;
+        action  add;
+        source  faceToFace;
+        sourceInfo
+        {
+            set    aFaces;
+        }
+    }
+    // add electrolyte/fuel interface
+    {
+        name    bFaces;
+        type    faceSet;
+        action  new;
+        source  cellToFace;
+        sourceInfo
+        {
+            set    electrolyte;
+            option all;
+        }
+    }
+    {
+        name    bFaces;
+        type    faceSet;
+        action  subset;
+        source  cellToFace;
+        sourceInfo
+        {
+            set    fuel;
+            option all;
+        }
+    }
+    {
+        name    iFaces;
+        type    faceSet;
+        action  add;
+        source  faceToFace;
+        sourceInfo
+        {
+            set    bFaces;
+        }
+    }
+    // add fuel/abp interface
+    {
+        name    cFaces;
+        type    faceSet;
+        action  new;
+        source  cellToFace;
+        sourceInfo
+        {
+            set    fuel;
+            option all;
+        }
+    }
+    {
+        name    cFaces;
+        type    faceSet;
+        action  subset;
+        source  cellToFace;
+        sourceInfo
+        {
+            set    abp;
+            option all;
+        }
+    }
+    {
+        name    iFaces;
+        type    faceSet;
+        action  add;
+        source  faceToFace;
+        sourceInfo
+        {
+            set    cFaces;
+        }
+    }
+);
+
+// *********************************************************************** //

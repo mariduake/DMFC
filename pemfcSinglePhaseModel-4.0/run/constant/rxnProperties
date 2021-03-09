@@ -1,0 +1,35 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      rxnProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// species stoichiometric coefficients for electrochemical reaction
+// "e" is a required rxnSpecie
+// coefficient of "e" is unsigned number of electrons transferred
+
+//MCDA For Methanol CH3OH + (3/2)O2 -- > 2H2O + CO2
+// 
+// H2 -2e + 0.5(O2) +2e --> H2O for PEMFC
+
+// name   stoichCoeff
+
+rxnSpecies
+(
+    CH3OH   1   
+    O2   1.5
+    H2O  2 
+    CO2  1
+    e    6
+);

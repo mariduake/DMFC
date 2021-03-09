@@ -1,0 +1,81 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant/fuel";
+    object      pemfcSpeciesProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+speciesList
+(
+    CH3OH
+    H2O
+    CO2
+);
+
+
+// name
+// molecular weight
+// molecular charge (unsigned)
+// reaction flag: -1=consumed(reactant), 0=inert, 1=produced(product)
+// enthalpy of formation (0 for elements)
+// stoichiometric coefficient in electrochemical reaction
+
+/* https://webbook.nist.gov/cgi/cbook.cgi?ID=C67561&Mask=2*/
+
+CH3OH   CH3OH  32.04  6  -1  0  239.9; 
+H2O     H2O  18.016   0  0  0   188.835;
+CO2     CO2  44.01    6   1  -393520  213.79;
+//      |     |      |   |     |       |
+//      |     |      |   |     |       standardEntropy [J/(mol K)
+//      |     |      |   |      enthalpyOfFormation [J/mol]
+//      |     |      |   produced=1|inert=0|consumed=-1
+//      |     |      molecularChargeForFaradaysLaw
+//      |    molecularWeight [kg/kmol]
+//      name
+
+
+inertPemfcSpecie H2O;   //inert for purposes of mass fraction calculation
+                       // not necessarily chemically inert
+
+
+// toddYoung polynomials
+// from Todd&Young, J. Power Sources 110 (2002) pp 186-200
+//
+// molar Cp coefficients (molar heat capacity) [J/(mol K)]
+CpCoeffs
+{
+    CH3OH  45.89  -138.48  709.40  -1125.82  917.63  -384.69  65.53;
+    H2O 37.373  -41.205  146.01  -217.08  181.54  -79.409  14.015;
+    CO2  4.3669  204.60  -471.33  657.88  -519.9  214.58  -35.992;
+   
+}
+
+// mu coefficients (dynamic viscosity) [1e-7 kg/(m s)]
+muCoeffs
+{
+    CH3OH   11.25  181.4  612.85  -1097.2  910.24 -378.75  63.45;
+    H2O  -6.7541  244.93  419.50  -522.38  348.12  -126.96  19.591;
+    CO2  -20.434  680.07  -432.49  244.22  -85.929  14.450  -0.4564;
+}
+
+// k coefficients (thermal conductivity) [W/(m K)]
+kCoeffs
+{
+    CH3OH   1.6778  -12.5727  55.8068  -62.8414  41.0951  -14.9573  2.32;
+    H2O  2.0103  -7.9139  35.922  -41.390  35.993  -18.974  4.1531;
+    CO2   2.8888  -27.018  129.65  -233.29  216.83  -101.12  18.698;
+    
+}
+
+// ************************************************************************* //
+

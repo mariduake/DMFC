@@ -1,0 +1,30 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant/electrolyte";
+    object      activationParameters;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+//anode ADDED MARICARMEN DUARTE 
+i0aReference    i0aReference    [0 -2 0 0 0 1 0]     9.425e+1;
+EAnode          EAnode          [1 2 -2 0 -1 0 0]   3.557e+4; //Yu Yang IJHE38,2013 9873
+alphaAnode      alphaAnode      [0 0 0 0 0 0 0]         0.5;
+
+// cathode
+
+i0Reference    i0Reference    [0 -2 0 0 0 1 0]     4.222e-2;
+ECathode       ECathode       [1 2 -2 0 -1 0 0]   7.322e+4;
+alphaCathode   alphaCathode   [0 0 0 0 0 0 0]         0.5;
+
+
+// ************************************************************************* //

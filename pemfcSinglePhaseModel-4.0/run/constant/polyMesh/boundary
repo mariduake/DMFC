@@ -1,0 +1,112 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+15
+(
+    cbpRight
+    {
+        type            patch;
+        nFaces          968;
+        startFace       393514;
+    }
+    cbpSides
+    {
+        type            patch;
+        nFaces          4260;
+        startFace       394482;
+    }
+    airInlet
+    {
+        type            patch;
+        nFaces          840;
+        startFace       398742;
+    }
+    airOutlet
+    {
+        type            patch;
+        nFaces          840;
+        startFace       399582;
+    }
+    airSides
+    {
+        type            patch;
+        nFaces          0;
+        startFace       400422;
+    }
+    cgdlSides
+    {
+        type            patch;
+        nFaces          2640;
+        startFace       400422;
+    }
+    cclSides
+    {
+        type            patch;
+        nFaces          264;
+        startFace       403062;
+    }
+    electrolyteSides
+    {
+        type            patch;
+        nFaces          660;
+        startFace       403326;
+    }
+    aclSides
+    {
+        type            patch;
+        nFaces          264;
+        startFace       403986;
+    }
+    agdlSides
+    {
+        type            patch;
+        nFaces          2640;
+        startFace       404250;
+    }
+    fuelInlet
+    {
+        type            patch;
+        nFaces          840;
+        startFace       406890;
+    }
+    fuelOutlet
+    {
+        type            patch;
+        nFaces          840;
+        startFace       407730;
+    }
+    fuelSides
+    {
+        type            patch;
+        nFaces          0;
+        startFace       408570;
+    }
+    abpSides
+    {
+        type            patch;
+        nFaces          4260;
+        startFace       408570;
+    }
+    abpLeft
+    {
+        type            patch;
+        nFaces          968;
+        startFace       412830;
+    }
+)
+
+// ************************************************************************* //

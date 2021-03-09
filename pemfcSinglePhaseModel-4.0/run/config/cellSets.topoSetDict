@@ -1,0 +1,379 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    // cathode bipolarPlate region cellSet
+    {
+        name    cbp;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0 0 0)(1.5e-03 22e-03 22e-03); // vertex 0 vertex 7
+        }
+    }
+    {
+        name    cbp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 0 0)(3e-03 1e-03 22e-03); // rib 1
+        }
+    }
+    {
+        name    cbp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 3e-03 0)(3e-03 4e-03 22e-03); // rib 2
+        }
+    }
+    {
+        name    cbp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 6e-03 0)(3e-03 7e-03 22e-03); // rib 3
+        }
+    }
+    {
+        name    cbp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 9e-03 0)(3e-03 10e-03 22e-03); // rib 4
+        }
+    }
+    {
+        name    cbp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 12e-03 0)(3e-03 13e-03 22e-03); // rib 5
+        }
+    }
+    {
+        name    cbp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 15e-03 0)(3e-03 16e-03 22e-03); // rib 6
+        }
+    }
+    {
+        name    cbp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 18e-03 0)(3e-03 19e-03 22e-03); // rib 7
+        }
+    }
+    {
+        name    cbp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 21e-03 0)(3e-03 22e-03 22e-03); // rib 8
+        }
+    }
+
+    // air region cellSet
+    {
+        name    air;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3e-03 0 0)(3.4137e-03 22e-03 22e-03); // vertex 8 vertex 19
+        }
+    }
+    {
+        name    air;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 1e-03 0)(3e-03 3e-03 22e-03); // channel 1
+        }
+    }
+    {
+        name    air;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 4e-03 0)(3e-03 6e-03 22e-03); // channel 2
+        }
+    }
+    {
+        name    air;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 7e-03 0)(3e-03 9e-03 22e-03); // channel 3
+        }
+    }
+    {
+        name    air;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 10e-03 0)(3e-03 12e-03 22e-03); // channel 4
+        }
+    }
+    {
+        name    air;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 13e-03 0)(3e-03 15e-03 22e-03); // channel 5
+        }
+    }
+    {
+        name    air;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 16e-03 0)(3e-03 18e-03 22e-03); // channel 6
+        }
+    }
+    {
+        name    air;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.5e-03 19e-03 0)(3e-03 21e-03 22e-03); // channel 7
+        }
+    }
+    // electrolyte region cellSet
+    {
+        name    electrolyte;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.4137e-03 0 0)(3.5407e-03 22e-03 22e-03); // vertex 16 vertex 23
+        }
+    }
+    // fuel region cellSet
+    {
+        name    fuel;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.5407e-03 0 0)(3.9544e-03 22e-03 22e-03); // vertex 20 vertex 31
+        }
+    }
+    {
+        name    fuel;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 1e-03 0)(5.4544e-03 3e-03 22e-03); // channel 1
+        }
+    }
+    {
+        name    fuel;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 4e-03 0)(5.4544e-03 6e-03 22e-03); // channel 2
+        }
+    }
+    {
+        name    fuel;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 7e-03 0)(5.4544e-03 9e-03 22e-03); // channel 3
+        }
+    }
+    {
+        name    fuel;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 10e-03 0)(5.4544e-03 12e-03 22e-03); // channel 4
+        }
+    }
+    {
+        name    fuel;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 13e-03 0)(5.4544e-03 15e-03 22e-03); // channel 5
+        }
+    }
+    {
+        name    fuel;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 16e-03 0)(5.4544e-03 18e-03 22e-03); // channel 6
+        }
+    }
+    {
+        name    fuel;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 19e-03 0)(5.4544e-03 21e-03 22e-03); // channel 7
+        }
+    }
+
+    // anode bipolarPlate region cellSet
+    {
+        name    abp;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (5.4544e-03 0 0)(6.9544e-03 22e-03 22e-03); // vertex 32 vertex 39
+        }
+    }
+    {
+        name    abp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 0 0)(5.4544e-03 1e-03 22e-03); // rib 1
+        }
+    }
+    {
+        name    abp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 3e-03 0)(5.4544e-03 4e-03 22e-03); // rib 2
+        }
+    }
+    {
+        name    abp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 6e-03 0)(5.4544e-03 7e-03 22e-03); // rib 3
+        }
+    }
+    {
+        name    abp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 9e-03 0)(5.4544e-03 10e-03 22e-03); // rib 4
+        }
+    }
+    {
+        name    abp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 12e-03 0)(5.4544e-03 13e-03 22e-03); // rib 5
+        }
+    }
+    {
+        name    abp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 15e-03 0)(5.4544e-03 16e-03 22e-03); // rib 6
+        }
+    }
+    {
+        name    abp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 18e-03 0)(5.4544e-03 19e-03 22e-03); // rib 7
+        }
+    }
+    {
+        name    abp;
+        type    cellSet;
+        action  add;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9544e-03 21e-03 0)(5.4544e-03 22e-03 22e-03); // rib 8
+        }
+    }
+);
+      
+// ************************************************************************* //

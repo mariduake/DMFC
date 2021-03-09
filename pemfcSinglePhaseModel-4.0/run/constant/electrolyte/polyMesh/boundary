@@ -1,0 +1,48 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "0.001/electrolyte/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+3
+(
+    electrolyteSides
+    {
+        type            patch;
+        nFaces          660;
+        startFace       13222;
+    }
+    electrolyte_to_fuel
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          968;
+        startFace       13882;
+        sampleMode      nearestPatchFace;
+        sampleRegion    fuel;
+        samplePatch     fuel_to_electrolyte;
+    }
+    electrolyte_to_air
+    {
+        type            mappedWall;
+        inGroups        1(wall);
+        nFaces          968;
+        startFace       14850;
+        sampleMode      nearestPatchFace;
+        sampleRegion    air;
+        samplePatch     air_to_electrolyte;
+    }
+)
+
+// ************************************************************************* //

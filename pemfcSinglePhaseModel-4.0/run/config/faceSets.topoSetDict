@@ -1,0 +1,276 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+// anode bipolarPlate faceSets 
+    {
+        name    abpLeftFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  abpLeft;
+        }
+    }
+    {
+        name    abpSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  abpSides;
+        }
+    }
+// cathode bipolarPlate faceSets
+    {
+        name    cbpRightFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  cbpRight;
+        }
+    }
+    {
+        name    cbpSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  cbpSides;
+        }
+    }
+// electrolyte faceSet
+    {
+        name    electrolyteSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  electrolyteSides;
+        }
+    }
+// anode catalyst layer faceSet
+    {
+        name    aclSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  aclSides;
+        }
+    }
+// anode gas diffusion layer faceSet
+    {
+        name    agdlSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  agdlSides;
+        }
+    }
+// fuel faceSets
+    {
+        name    fuelSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  fuelSides;
+        }
+    }
+    {
+        name    fuelInletFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  fuelInlet;
+        }
+    }
+    {
+        name    fuelOutletFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  fuelOutlet;
+        }
+    }
+// cathode catalyst layer faceSet
+    {
+        name    cclSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  cclSides;
+        }
+    }
+// cathode gas diffusion layer faceSet
+    {
+        name    cgdlSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  cgdlSides;
+        }
+    }
+// air faceSets
+    {
+        name    airSidesFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  airSides;
+        }
+    }
+    {
+        name    airInletFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  airInlet;
+        }
+    }
+    {
+        name    airOutletFaces;
+        type    faceSet;
+        action  new;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  airOutlet;
+        }
+    }
+// add some fuel patches to abpSideFaces
+    {
+        name    abpSidesFaces;
+        type    faceSet;
+        action  add;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  fuelInlet;
+        }
+    }
+    {
+        name    abpSidesFaces;
+        type    faceSet;
+        action  add;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  fuelOutlet;
+        }
+    }
+    {
+        name    abpSidesFaces;
+        type    faceSet;
+        action  add;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  fuelSides;
+        }
+    }
+// add some air patches to cbpSidesFaces
+    {
+        name    cbpSidesFaces;
+        type    faceSet;
+        action  add;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  airInlet;
+        }
+    }
+    {
+        name    cbpSidesFaces;
+        type    faceSet;
+        action  add;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  airOutlet;
+        }
+    }
+    {
+        name    cbpSidesFaces;
+        type    faceSet;
+        action  add;
+        source  patchToFace;
+        sourceInfo
+        {
+            name  airSides;
+        }
+    }
+// clear fuel faceSets
+    {
+        name    fuelSidesFaces;
+        type    faceSet;
+        action  clear;
+    }
+    {
+        name    fuelInletFaces;
+        type    faceSet;
+        action  clear;
+    }
+    {
+        name    fuelOutletFaces;
+        type    faceSet;
+        action  clear;
+    }
+
+// clear air faceSets
+    {
+        name    airSidesFaces;
+        type    faceSet;
+        action  clear;
+    }
+    {
+        name    airInletFaces;
+        type    faceSet;
+        action  clear;
+    }
+    {
+        name    airOutletFaces;
+        type    faceSet;
+        action  clear;
+    }
+);
+
+// ************************************************************************* //

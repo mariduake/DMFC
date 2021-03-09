@@ -1,0 +1,102 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 353.0; // 79.85degC
+
+boundaryField
+{
+    abpLeft
+    {
+        type            zeroGradient;    
+    }
+
+    abpSides
+    {
+        type            zeroGradient;
+    } 
+       
+    fuelInlet
+    {
+        type            fixedValue;
+        value           $internalField;
+    }
+
+    fuelOutlet
+    {
+        type            zeroGradient;
+    }
+
+    fuelSides
+    {
+        type            zeroGradient;
+    }  
+  
+    agdlSides
+    {
+        type            zeroGradient;
+    }
+
+    aclSides
+    {
+        type            zeroGradient;
+    } 
+
+    electrolyteSides
+    {
+        type            zeroGradient;
+    } 
+
+    cclSides
+    {
+        type            zeroGradient;
+    }
+
+    cgdlSides
+    {
+        type            zeroGradient;
+    }
+
+    airInlet
+    {
+        type            fixedValue;
+        value           $internalField;
+    }
+
+    airOutlet
+    {
+        type            zeroGradient;
+    }
+
+    airSides
+    {
+        type            zeroGradient;
+    }  
+        
+    cbpSides
+    {
+        type            zeroGradient;
+    }
+
+    cbpRight
+    {
+        type            zeroGradient;    
+    }
+}
+
+// ************************************************************************* //

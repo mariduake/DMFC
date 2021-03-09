@@ -1,0 +1,705 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : pemfcSinglephaseNonIsothermalSolver
+Date   : Feb 13 2021
+Time   : 17:09:09
+Host   : "fatima-HP-625"
+PID    : 3406
+Case   : /home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading cell properties
+
+galvanostatic run
+    V     = V [1 2 -3 0 0 -1 0] 0.6
+    Ibar0 = Ibar0 [0 -2 0 0 0 1 0] 7000
+    Rhat  = Rhat [1 4 -3 0 0 -2 0] 1e-05
+    Rhat0  = Rhat0 [1 4 -3 0 0 -2 0] 1e-05
+CL electronic conductivity(kappaCl) = kappaCl [-1 -2 3 0 0 2 0] 1000
+GDL electronic conductivity(kappaGdl) = kappaGdl [-1 -2 3 0 0 2 0] 5000
+GDL - BP Contact resistance (rContact)= rContact [1 4 -3 0 0 -2 0] 2e-06
+BP electronic conductivity(kappaBp) = kappaBp [-1 -2 3 0 0 2 0] 83000
+CL thickness (tCl) = tCl [0 1 0 0 0 0 0] 3.7e-06
+GDL thickness (tGdl) = tGdl [0 1 0 0 0 0 0] 0.00041
+BP thickness (tBp) = tBp [0 1 0 0 0 0 0] 0.003
+concentration overpotential constant = etaConCaConstant [0 0 0 0 0 0 0] 0.25
+
+    Tinit = Tinit [0 0 0 1 0 0 0] 353
+
+    anodeName              = fuel_to_electrolyte
+    fuelInletName          = fuelInlet
+    fuelOutletName         = fuelOutlet
+    fuelAbpName            = fuel_to_abp
+    cathodeName            = air_to_electrolyte
+    airInletName           = airInlet
+    airOutletName          = airOutlet
+    airCbpName             = air_to_cbp
+    electrolyteAnodeName   = electrolyte_to_fuel
+    electrolyteCathodeName = electrolyte_to_air
+    abpFuelName            = abp_to_fuel
+    cbpAirName             = cbp_to_air
+
+Reading cell field T
+
+Reading cell field k
+
+Reading anode bipolarPlate properties
+
+  anode bipolarPlate
+    rhoAnodeBipolarPlate = rho [1 -3 0 0 0 0 0] 1880
+    CpAnodeBipolarPlate  = Cp [0 2 -2 -1 0 0 0] 875
+    kAnodeBipolarPlate   = k [1 1 -3 -1 0 0 0] 10.7
+
+Reading cathode bipolarPlate properties
+
+  cathode bipolarPlate
+    rhoCathodeBipolarPlate = rho [1 -3 0 0 0 0 0] 1880
+    CpCathodeBipolarPlate  = Cp [0 2 -2 -1 0 0 0] 875
+    kCathodeBipolarPlate   = k [1 1 -3 -1 0 0 0] 10.7
+
+Creating anode bipolar plate field TanodeBP
+Creating cathode bipolar plate field TcathodeBP
+Reading fuel properties
+
+    muF       = mu [1 -1 -1 0 0 0 0] 1.155227e-05
+    rhoF      = rho [1 -3 0 0 0 0 0] 1.138
+    CpF       = Cp [0 2 -2 -1 0 0 0] 3743
+    kF        = k [1 1 -3 -1 0 0 0] 0.01805811
+    dHydFuel  = dHyd [0 1 0 0 0 0 0] 0.001
+
+Creating fuel field p
+Creating fuel field rho
+Creating fuel field mu
+Creating fuel field U
+Creating fuel face flux field phi
+Creating fuel field Tfuel
+Creating fuel field cp
+Creating fuel field k
+Creating fuel porous zones
+Creating porosity model list from porosityProperties
+
+Porosity region agdl:
+    selecting model: myDarcyForchheimer
+    creating porous zone: agdl
+Porosity region acl:
+    selecting model: myDarcyForchheimer
+    creating porous zone: acl
+    number of porous zones = 2
+    zone 1(6) agdl : size = 19360; porosity = 0.5
+    zone 1(5) acl : size = 1936; porosity = 0.4
+
+
+Reading fuel pemfcSpeciesProperties
+               name    MW[kg/kmol]     ne      rSign   hForm       sForm   
+fuelSpecies[0] CH3OH   32.04           6       -1      0           239.9   
+fuelSpecies[1] H2O     18.016          0       0       0           188.835 
+fuelSpecies[2] CO2     44.01           6       1       -393520     213.79  
+
+fuelInertSpecie = H2O
+
+CpCoeffs(CH3OH) 45.89 -138.48 709.4 -1125.82 917.63 -384.69 65.53
+CpCoeffs(H2O) 37.373 -41.205 146.01 -217.08 181.54 -79.409 14.015
+CpCoeffs(CO2) 4.3669 204.6 -471.33 657.88 -519.9 214.58 -35.992
+
+muCoeffs(CH3OH) 11.25 181.4 612.85 -1097.2 910.24 -378.75 63.45
+muCoeffs(H2O) -6.7541 244.93 419.5 -522.38 348.12 -126.96 19.591
+muCoeffs(CO2) -20.434 680.07 -432.49 244.22 -85.929 14.45 -0.4564
+
+kCoeffs(CH3OH) 1.6778 -12.5727 55.8068 -62.8414 41.0951 -14.9573 2.32
+kCoeffs(H2O) 2.0103 -7.9139 35.922 -41.39 35.993 -18.974 4.1531
+kCoeffs(CO2) 2.8888 -27.018 129.65 -233.29 216.83 -101.12 18.698
+
+ToddYoung checks
+CH3OH
+    Cp(353) = 48.14942
+    mu(353) = 115.5687
+    k(353)  = 1.990069
+H2O
+    Cp(353) = 33.88381
+    mu(353) = 113.7492
+    k(353)  = 2.33519
+CO2
+    Cp(353) = 39.83071
+    mu(353) = 175.2251
+    k(353)  = 2.094009
+
+Reading electrolyte properties
+
+    rhoElectrolyte  = rho [1 -3 0 0 0 0 0] 1980
+    CpElectrolyte   = Cp [0 2 -2 -1 0 0 0] 1050
+    kElectrolyte    = k [1 1 -3 -1 0 0 0] 0.67
+    sigmaElectrolyte    = sigma [-1 -2 3 0 0 2 0] 17
+
+Reading activation parameters
+
+    i0CathodeElectrolyteReference    = i0Reference [0 -2 0 0 0 1 0] 0.0139
+    ECathodeElectrolyte    = ECathode [1 2 -2 0 -1 0 0] 73220
+    alphaCathodeElectrolyte    = alphaCathode [0 0 0 0 0 0 0] 1
+
+creating current density field
+
+creating voltage field
+
+creating Nernst potential field
+
+Creating electrolyte field Telectrolyte
+Reading air properties
+
+    muA   = mu [1 -1 -1 0 0 0 0] 1.5158e-05
+    rhoA  = rho [1 -3 0 0 0 0 0] 0.914
+    CpA   = Cp [0 2 -2 -1 0 0 0] 1108.85
+    kA    = k [1 1 -3 -1 0 0 0] 0.02867
+    dHydAir  = dHyd [0 1 0 0 0 0 0] 0.001
+
+Creating air field p
+Creating air field rho
+Creating air field mu
+Creating air field U
+Creating air face flux field phi
+Creating air field Tair
+Creating air field cp
+Creating air field k
+Creating air porous zones
+Creating porosity model list from porosityProperties
+
+Porosity region cgdl:
+    selecting model: myDarcyForchheimer
+    creating porous zone: cgdl
+Porosity region ccl:
+    selecting model: myDarcyForchheimer
+    creating porous zone: ccl
+    number of porous zones = 2
+    zone 1(5) cgdl : size = 19360; porosity = 0.5
+    zone 1(6) ccl : size = 1936; porosity = 0.4
+
+
+Reading air pemfcSpeciesProperties
+              name    MW[kg/kmol]     ne      rSign   hForm       sForm   
+airSpecies[0] O2      32              4       -1      0           205.152 
+airSpecies[1] N2      28.02           0       0       0           191.609 
+airSpecies[2] H2O     18.016          2       1       -241834.9   188.835 
+
+airInertSpecie = N2
+
+CpCoeffs(O2) 34.85 -57.975 203.68 -300.37 231.72 -91.821 14.776
+CpCoeffs(N2) 29.027 4.8987 -38.04 105.17 -113.56 55.554 -10.35
+CpCoeffs(H2O) 37.373 -41.205 146.01 -217.08 181.54 -79.409 14.015
+
+muCoeffs(O2) -1.6918 889.75 -892.79 905.98 -598.36 221.64 -34.754
+muCoeffs(N2) 1.2719 771.45 -809.2 832.47 -553.93 206.15 -32.43
+muCoeffs(H2O) -6.7541 244.93 419.5 -522.38 348.12 -126.96 19.591
+
+kCoeffs(O2) -0.1857 11.118 -7.3734 6.713 -4.1797 1.491 -0.2278
+kCoeffs(N2) -0.3216 14.81 -25.473 38.837 -32.133 13.493 -2.2741
+kCoeffs(H2O) 2.0103 -7.9139 35.922 -41.39 35.993 -18.974 4.1531
+
+ToddYoung checks
+O2
+    Cp(353) = 29.67613
+    mu(353) = 232.8482
+    k(353)  = 3.058278
+N2
+    Cp(353) = 29.16341
+    mu(353) = 201.8441
+    k(353)  = 3.011103
+H2O
+    Cp(353) = 33.88381
+    mu(353) = 113.7492
+    k(353)  = 2.33519
+
+
+Reading rxnProperties
+rxnSpCoef contents: 
+5
+(
+CO2
+O2
+CH3OH
+e
+H2O
+)
+
+rxnSpecies stoichiometric coefficients: 
+stoichCoeff O2 = 1.5
+stoichCoeff H2O = 2
+stoichCoeff CH3OH = 1
+stoichCoeff CO2 = 1
+stoichCoeff e = 6
+
+Setting special patch IDs
+
+    electrolyte thickness (calculated) tMem = tMem [0 1 0 0 0 0 0] 0.000127
+
+
+Creating fuel diffusivity models
+zone 2 fuel
+Selecting diffusivity model fixedDiffusivity
+anodeZone 0, fuelZone 6: agdl
+size = 19360
+Selecting diffusivity model fixedDiffusivity
+anodeZone 1, fuelZone 5: acl
+size = 1936
+Selecting diffusivity model fixedDiffusivity
+
+Creating air diffusivity models
+zone 4 air
+Selecting diffusivity model binaryFSG
+cathodeZone 0, airZone 5: cgdl
+size = 19360
+Selecting diffusivity model fixedDiffusivity
+cathodeZone 1, airZone 6: ccl
+size = 1936
+Selecting diffusivity model fixedDiffusivity
+
+Starting time loop
+
+Time = 1
+
+Tfuel min mean max = 353    353    353
+Tair min mean max  = 353    353    353
+min,mean,max(rhoFuel): 1.02623   1.02623   1.02623
+min,mean,max(rhoAir): 0.9139413   0.9139413   0.9139413
+min,mean,max(muFuel): 1.153868e-05   1.153868e-05   1.153868e-05
+min,mean,max(muAir): 1.948307e-05   1.948307e-05   1.948307e-05
+min,mean,max(kFuel): 0.02024581   0.02024581   0.02024581
+min,mean,max(kAir): 0.02919151   0.02919151   0.02919151
+
+Solving air flow
+--> FOAM Warning : 
+    From function Foam::fv::gaussConvectionScheme<Type>::gaussConvectionScheme(const Foam::fvMesh&, const surfaceScalarField&, Foam::Istream&) [with Type = Foam::Vector<double>; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>]
+    in file finiteVolume/convectionSchemes/gaussConvectionScheme/gaussConvectionScheme.H at line 124
+    Reading "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/air/fvSchemes.divSchemes.div(phi,U)" at line 32
+    Unbounded 'Gauss' div scheme used in steady-state solver, use 'bounded Gauss' to ensure boundedness.
+    To remove this warning switch off 'warnUnboundedGauss' in "/home/fatima/OpenFOAM/OpenFOAM-4.0/etc/controlDict"
+DILUPBiCG:  Solving for Ux, Initial residual = 0.9999968, Final residual = 1.5478e-10, No Iterations 4
+DILUPBiCG:  Solving for Uy, Initial residual = 0.999979, Final residual = 4.87157e-12, No Iterations 5
+DILUPBiCG:  Solving for Uz, Initial residual = 1, Final residual = 2.371463e-10, No Iterations 4
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 7.897306e-10, No Iterations 238
+time step continuity errors : sum local = 2.027143e-06, global = -3.367083e-08
+DICPCG:  Solving for p, Initial residual = 0.0403882, Final residual = 8.410109e-10, No Iterations 215
+time step continuity errors : sum local = 2.235446e-06, global = -6.680733e-08
+
+Solving fuel flow
+--> FOAM Warning : 
+    From function Foam::fv::gaussConvectionScheme<Type>::gaussConvectionScheme(const Foam::fvMesh&, const surfaceScalarField&, Foam::Istream&) [with Type = Foam::Vector<double>; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>]
+    in file finiteVolume/convectionSchemes/gaussConvectionScheme/gaussConvectionScheme.H at line 124
+    Reading "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/fuel/fvSchemes.divSchemes.div(phi,U)" at line 32
+    Unbounded 'Gauss' div scheme used in steady-state solver, use 'bounded Gauss' to ensure boundedness.
+    To remove this warning switch off 'warnUnboundedGauss' in "/home/fatima/OpenFOAM/OpenFOAM-4.0/etc/controlDict"
+DILUPBiCG:  Solving for Ux, Initial residual = 0.9999968, Final residual = 1.317541e-11, No Iterations 3
+DILUPBiCG:  Solving for Uy, Initial residual = 0.9997891, Final residual = 7.226337e-10, No Iterations 3
+DILUPBiCG:  Solving for Uz, Initial residual = 1, Final residual = 2.37403e-10, No Iterations 4
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 9.411055e-10, No Iterations 230
+time step continuity errors : sum local = 3.821159e-06, global = -1.355247e-08
+DICPCG:  Solving for p, Initial residual = 0.0399516, Final residual = 8.233739e-10, No Iterations 208
+time step continuity errors : sum local = 3.673645e-06, global = -7.496366e-09
+ReFuel = 109.0297
+ReAir  = 144.5844
+
+fuelSpecies CH3OH
+
+fuelDiffModels[0]
+  zone size = 39776
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 2.8e-09
+
+fuelDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 4.0314e-05
+
+fuelDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 1.252e-05
+
+diffSpFuel[CH3OH]
+    internalField min mean max = 2.8e-09  2.023254e-05  4.0314e-05
+
+fuelSpecies CO2
+
+fuelDiffModels[0]
+  zone size = 39776
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 2.8e-09
+
+fuelDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 4.0314e-05
+
+fuelDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 1.252e-05
+
+diffSpFuel[CO2]
+    internalField min mean max = 2.8e-09  2.023254e-05  4.0314e-05
+
+airSpecies O2
+
+airDiffModels[0]
+  zone size = 39776
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: O2 31.9988 16.3
+   background speciesB molWt diffVol: N2 28.0134 18.5
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: O2 31.9988 16.3
+   background speciesB molWt diffVol: H2O 18.01534 13.1
+
+airDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+airDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+diffSpAir[O2]
+    internalField min mean max = 9.732e-06  1.884555e-05  2.939586e-05
+
+airSpecies H2O
+
+airDiffModels[0]
+  zone size = 39776
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: H2O 18.01534 13.1
+   background speciesB molWt diffVol: O2 31.9988 16.3
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: H2O 18.01534 13.1
+   background speciesB molWt diffVol: N2 28.0134 18.5
+
+airDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+airDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+diffSpAir[H2O]
+    internalField min mean max = 9.732e-06  2.136883e-05  3.48358e-05
+
+Solving air scalars
+ Yair[0].name() = YO2air
+DILUPBiCG:  Solving for YO2air, Initial residual = 0.9999751, Final residual = 4.596758e-10, No Iterations 35
+ Yair[1].name() = YN2air
+ Yair[2].name() = YH2Oair
+DILUPBiCG:  Solving for YH2Oair, Initial residual = 0.9999809, Final residual = 5.774156e-10, No Iterations 37
+inertIndex = 1
+min,mean,max(YO2air): 0.2 , 0.2 , 0.2
+min,mean,max(YN2air): 0.65 , 0.65 , 0.65
+min,mean,max(YH2Oair): 0.15 , 0.15 , 0.15
+
+Solving fuel scalars
+ Yfuel[0].name() = YCH3OHfuel
+DILUPBiCG:  Solving for YCH3OHfuel, Initial residual = 0.9999906, Final residual = 7.460496e-10, No Iterations 55
+ Yfuel[1].name() = YH2Ofuel
+ Yfuel[2].name() = YCO2fuel
+DILUPBiCG:  Solving for YCO2fuel:  solution singularity
+inertIndex = 1
+min,mean,max(YCH3OHfuel): 0.9 , 0.9 , 0.9
+min,mean,max(YH2Ofuel): 0.09999996 , 0.1 , 0.1
+min,mean,max(YCO2fuel): 1e-15 , 1e-15 , 1e-15
+
+Solving electrochemistry
+min,max(anodeT): 353 , 353
+min,max(cathodeT): 353 , 353
+min,mean,max(XCH3OH): 0.8350018 , 0.8350018 , 0.8350019
+min,mean,max(XCO2): 1e-15 , 1e-15 , 1e-15
+min,mean,max(XO2): 0.1654593 , 0.1654593 , 0.1654593
+min,mean,max(XH2O): 0.2204164 , 0.2204164 , 0.2204164
+O2  1.5
+   mean H(T) = 2426.383
+   mean S(T) = 315.1971
+H2O  2
+   mean H(T) = -479971.3
+   mean S(T) = 389.0555
+CH3OH  1
+   mean H(T) = 2531.134
+   mean S(T) = 247.6835
+CO2  1
+   mean H(T) = -391402.8
+   mean S(T) = 220.3025
+ mean deltaHrxn = -876331.5
+ mean cathodeT  = 353
+ mean deltaSrxn = 46.47744
+ mean TdeltaS   = 16406.54
+ mean deltaG    = -892738.1
+
+min,mean,max Nernst = 1.717942  1.717942  1.717942
+
+min,max(pSatAnode): 47024.19 , 47024.19
+min,max(pSatCathode): 47024.19 , 47024.19
+min,mean,max(wActivityAnode): 0.355537 , 0.3556725  0.3558076
+min,mean,max(wActivityCathode): 0.4749887 , 0.4757572  0.4765191
+min,mean,max(a): 0.8305257 , 0.8314297  0.8323267
+min, mean, max (lambda): 7.44745 , 7.470541  7.493506
+min,mean,max(sigma): 6.333601  6.355067  6.376416
+min,mean,max (RiMem) = 9.96039e-06  1.996342e-05  2.005162e-05
+min,mean,max (ASR)= 1.437918e-05 2.438221e-05 2.447041e-05
+min,mean,max (cathodeT) = 353  353  353
+min,mean,max (i0Ca) = 0.01375349  0.01375349  0.01375349
+min,mean,max (iLCa) = 52328.45  52328.45  52328.45
+min,mean,max (etaActCa) = 0.4348963  0.4349766  0.445081
+min,mean,max (etaConCa) = 0.1384698  0.1389914  0.2256029
+min,mean,max (etaOhmic) = 0.4472577  0.5439736  0.5445755
+
+Solve current
+
+layer 1
+
+sumVolume: 6.1468e-08
+min,max(Nernst): 1.717942 , 1.717942
+Ibar0 = 7000    Ibar = 22315.11    V = 0.7531511
+
+stack Voltage =0.7531511
+min,mean,max(current): 22254.45 , 22315.11 , 31104.53
+
+Calculating electrochemical heating
+anodeEntropyChange  min max: -4.563502 -4.563502
+cathodeEntropyChange  min max: 44.73104 44.73104
+totalEntropyChange  min max: 40.16754 40.16754
+totalEntropySource  min max: -14179.14 -14179.14  -14179.14
+min,mean,max(electrochemicalHeating): 2.264118e+07  2.270289e+07  3.164505e+07
+fuel species electrochemical fluxes and YEqn BCs
+s species[] isFlux[] mflux[] = 0 CH3OH true -1.195513
+s species[] isFlux[] mflux[] = 1 H2O false 0
+s species[] isFlux[] mflux[] = 2 CO2 true 1.642151
+
+
+fuel mass rates: 
+   inlet: 2.641924e-05   outlet: 1.134646e-05   anode: 2.233191e-07
+CH3OH mass rates: 
+   inlet = 2.377732e-05   outlet = 1.021181e-05   chem = 5.977565e-07
+      utilization by chemRate = 0.02513978
+      utilization by outRate  = 0.5705229
+
+
+air species electrochemical fluxes and YEqn BCs
+s species[] isFlux[] mflux[] = 0 O2 true -1.791031
+s species[] isFlux[] mflux[] = 1 N2 false 0
+s species[] isFlux[] mflux[] = 2 H2O true 2.0167
+
+
+air mass rates: 
+   inlet: 5.915591e-05   outlet: 2.540611e-05   cathode: 1.128349e-07
+O2 mass rates: 
+   inlet = 1.183118e-05   outlet = 5.081222e-06   chem = 8.955153e-07
+      utilization by chemRate = 0.07569111
+      utilization by outRate  = 0.5705229
+
+min mean max rhoCpF(fuel) = 1580.997 1580.997 1580.997
+
+
+min mean max rhoCpF(air) = 1045.654 1045.654 1045.654
+ELECTROLYTE FLUX MAPPING ACTIVATED
+time step continuity errors : sum local = 1.162586e-06, global = -1.46189e-08
+
+Solving energy
+--> FOAM Warning : 
+    From function Foam::fv::gaussConvectionScheme<Type>::gaussConvectionScheme(const Foam::fvMesh&, const surfaceScalarField&, Foam::Istream&) [with Type = double; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>]
+    in file finiteVolume/convectionSchemes/gaussConvectionScheme/gaussConvectionScheme.H at line 124
+    Reading "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/fvSchemes.divSchemes.div(rhoCpPhi,T)" at line 31
+    Unbounded 'Gauss' div scheme used in steady-state solver, use 'bounded Gauss' to ensure boundedness.
+    To remove this warning switch off 'warnUnboundedGauss' in "/home/fatima/OpenFOAM/OpenFOAM-4.0/etc/controlDict"
+DILUPBiCG:  Solving for T, Initial residual = 1, Final residual = 8.429085e-19, No Iterations 507
+T min mean max     = 353.0351    365.6969    371.9765
+
+ sum TcellEqn.source() =   1.395502
+
+ExecutionTime = 19.22 s
+
+
+Time = 2
+
+Tfuel min mean max = 353.0521    365.1245    371.9224
+Tair min mean max  = 353.0351    364.6502    371.8988
+min,mean,max(rhoFuel): 0.9740414   0.9927202   1.026888
+min,mean,max(rhoAir): 0.8675855   0.8864288   0.9169021
+min,mean,max(muFuel): 1.154047e-05   1.195414e-05   1.218691e-05
+min,mean,max(muAir): 1.948461e-05   1.999253e-05   2.030745e-05
+min,mean,max(kFuel): 0.02025062   0.02138751   0.02204004
+min,mean,max(kAir): 0.02919394   0.02999846   0.03049992
+
+Solving air flow
+--> FOAM Warning : 
+    From function Foam::fv::gaussConvectionScheme<Type>::gaussConvectionScheme(const Foam::fvMesh&, const surfaceScalarField&, Foam::Istream&) [with Type = Foam::Vector<double>; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>]
+    in file finiteVolume/convectionSchemes/gaussConvectionScheme/gaussConvectionScheme.H at line 124
+    Reading "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/air/fvSchemes.divSchemes.div(phi,U)" at line 32
+    Unbounded 'Gauss' div scheme used in steady-state solver, use 'bounded Gauss' to ensure boundedness.
+    To remove this warning switch off 'warnUnboundedGauss' in "/home/fatima/OpenFOAM/OpenFOAM-4.0/etc/controlDict"
+DILUPBiCG:  Solving for Ux, Initial residual = 0.3894602, Final residual = 1.030667e-10, No Iterations 7
+DILUPBiCG:  Solving for Uy, Initial residual = 0.4424677, Final residual = 4.486794e-10, No Iterations 6
+DILUPBiCG:  Solving for Uz, Initial residual = 0.211296, Final residual = 4.746902e-10, No Iterations 6
+DICPCG:  Solving for p, Initial residual = 0.04095728, Final residual = 9.922685e-10, No Iterations 210
+time step continuity errors : sum local = 1.879313e-06, global = 1.360596e-10
+DICPCG:  Solving for p, Initial residual = 0.02136572, Final residual = 9.667754e-10, No Iterations 203
+time step continuity errors : sum local = 1.89078e-06, global = -4.698652e-09
+
+Solving fuel flow
+--> FOAM Warning : 
+    From function Foam::fv::gaussConvectionScheme<Type>::gaussConvectionScheme(const Foam::fvMesh&, const surfaceScalarField&, Foam::Istream&) [with Type = Foam::Vector<double>; Foam::surfaceScalarField = Foam::GeometricField<double, Foam::fvsPatchField, Foam::surfaceMesh>]
+    in file finiteVolume/convectionSchemes/gaussConvectionScheme/gaussConvectionScheme.H at line 124
+    Reading "/home/fatima/OpenFOAM/fatima-4.0/run/pemfcSinglePhaseModel-4.0/run/system/fuel/fvSchemes.divSchemes.div(phi,U)" at line 32
+    Unbounded 'Gauss' div scheme used in steady-state solver, use 'bounded Gauss' to ensure boundedness.
+    To remove this warning switch off 'warnUnboundedGauss' in "/home/fatima/OpenFOAM/OpenFOAM-4.0/etc/controlDict"
+DILUPBiCG:  Solving for Ux, Initial residual = 0.4203002, Final residual = 9.665672e-10, No Iterations 6
+DILUPBiCG:  Solving for Uy, Initial residual = 0.4419782, Final residual = 1.188678e-10, No Iterations 6
+DILUPBiCG:  Solving for Uz, Initial residual = 0.213344, Final residual = 1.398283e-10, No Iterations 6
+DICPCG:  Solving for p, Initial residual = 0.04330752, Final residual = 9.067996e-10, No Iterations 197
+time step continuity errors : sum local = 3.095987e-06, global = 3.511357e-09
+DICPCG:  Solving for p, Initial residual = 0.02380071, Final residual = 6.845942e-10, No Iterations 190
+time step continuity errors : sum local = 3.064671e-06, global = -3.065494e-09
+ReFuel = 108.4761
+ReAir  = 144.1053
+
+fuelSpecies CH3OH
+
+fuelDiffModels[0]
+  zone size = 39776
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 2.8e-09
+
+fuelDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 4.0314e-05
+
+fuelDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 1.252e-05
+
+diffSpFuel[CH3OH]
+    internalField min mean max = 2.8e-09  2.023254e-05  4.0314e-05
+
+fuelSpecies CO2
+
+fuelDiffModels[0]
+  zone size = 39776
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 2.8e-09
+
+fuelDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 4.0314e-05
+
+fuelDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 1.252e-05
+
+diffSpFuel[CO2]
+    internalField min mean max = 2.8e-09  2.023254e-05  4.0314e-05
+
+airSpecies O2
+
+airDiffModels[0]
+  zone size = 39776
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: O2 31.9988 16.3
+   background speciesB molWt diffVol: N2 28.0134 18.5
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: O2 31.9988 16.3
+   background speciesB molWt diffVol: H2O 18.01534 13.1
+
+airDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+airDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+diffSpAir[O2]
+    internalField min mean max = 9.732e-06  1.938236e-05  3.207839e-05
+
+airSpecies H2O
+
+airDiffModels[0]
+  zone size = 39776
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: H2O 18.01534 13.1
+   background speciesB molWt diffVol: O2 31.9988 16.3
+diffusivityModels::binaryFSG:
+    diffusing speciesA molWt diffVol: H2O 18.01534 13.1
+   background speciesB molWt diffVol: N2 28.0134 18.5
+
+airDiffModels[1]
+  zone size = 19360
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+airDiffModels[2]
+  zone size = 1936
+diffusivityModels::fixedDiffusivity: 
+   diff0 = diff0 [0 2 -1 0 0 0 0] 9.732e-06
+
+diffSpAir[H2O]
+    internalField min mean max = 9.732e-06  2.200498e-05  3.801476e-05
+
+Solving air scalars
+ Yair[0].name() = YO2air
+DILUPBiCG:  Solving for YO2air, Initial residual = 0.9999998, Final residual = 1.113429e-10, No Iterations 40
+ Yair[1].name() = YN2air
+ Yair[2].name() = YH2Oair
+DILUPBiCG:  Solving for YH2Oair, Initial residual = 0.9999998, Final residual = 2.160502e-10, No Iterations 39
+inertIndex = 1
+min,mean,max(YO2air): 1e-15 , 0.1599613 , 0.2
+min,mean,max(YN2air): 0.5996692 , 0.6470891 , 0.65
+min,mean,max(YH2Oair): 0.15 , 0.1929496 , 0.4003308
+
+Solving fuel scalars
+ Yfuel[0].name() = YCH3OHfuel
+DILUPBiCG:  Solving for YCH3OHfuel, Initial residual = 0.9999982, Final residual = 8.645592e-10, No Iterations 56
+ Yfuel[1].name() = YH2Ofuel
+ Yfuel[2].name() = YCO2fuel
+DILUPBiCG:  Solving for YCO2fuel, Initial residual = 1, Final residual = 6.398625e-10, No Iterations 56
+inertIndex = 1
+min,mean,max(YCH3OHfuel): 0.50995 , 0.7956593 , 0.9
+min,mean,max(YH2Ofuel): 0.08909467 , 0.09708276 , 0.1
+min,mean,max(YCO2fuel): 1e-15 , 0.1072579 , 0.4009553
+
+Solving electrochemistry
+min,max(anodeT): 362.5278 , 371.9446
+min,max(cathodeT): 362.4471 , 371.9247
+min,mean,max(XCH3OH): 0.5309285 , 0.6869295 , 0.8157593
+min,mean,max(XCO2): 0.0192426 , 0.1480724 , 0.3040734
+min,mean,max(XO2): 1e-15 , 0.07461819 , 0.1340048
+min,mean,max(XH2O): 0.2684422 , 0.3587625 , 0.5096129
+min,mean,max Nernst = 1.27817  1.538747  1.560151
+
+min,max(pSatAnode): 68424.65 , 96991.36
+min,max(pSatCathode): 68214.23 , 96922.06
+min,mean,max(wActivityAnode): 0.1723745 , 0.1970327  0.2445362
+min,mean,max(wActivityCathode): 0.3845928 , 0.4261467  0.5765648
+min,mean,max(a): 0.5645751 , 0.6231794  0.7629144
+min, mean, max (lambda): 3.518809 , 4.025199  5.941277
+min,mean,max(sigma): 3.202643  3.659876  5.805119
+min,mean,max (RiMem) = 2.390858e-05  3.508723e-05  3.837608e-05
+min,mean,max (ASR)= 2.832737e-05 3.950602e-05 4.279486e-05
+min,mean,max (cathodeT) = 362.4471  368.3439  371.9247
+min,mean,max (i0Ca) = 0.02635178  0.03925727  0.04894413
+min,mean,max (iLCa) = 2.488693e-10  24077.94  42293.02
