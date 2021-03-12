@@ -23,7 +23,7 @@ public:
 
     scalar operator()(const scalar& i) const
     {
-        return Nernst_-(i*R_)-(A_*Foam::log(i*cO2Ref_/i0Cathode_*conO2_))-Vcell_-(B_*Foam::log(i*cMeRef_/(i0Anode_*concMe)));
+        return Nernst_-(i*R_)-(A_*Foam::log(i*cO2Ref_/i0C_*concO2_))-Vcell_-(B_*Foam::log(i*cMeRef_/(i0A_*concMe)));
     }
 };
 
