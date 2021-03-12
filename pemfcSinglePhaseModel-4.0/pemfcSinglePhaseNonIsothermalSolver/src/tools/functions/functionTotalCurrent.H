@@ -14,7 +14,7 @@ public:
     A_(A),
     i0C_(i0C),
     B_(B),
-    i0Anode_(i0A),
+    i0A_(i0A),
     cO2Ref_(cO2Ref),
     cMeRef_(cMeRef),
     concO2_(concO2),
