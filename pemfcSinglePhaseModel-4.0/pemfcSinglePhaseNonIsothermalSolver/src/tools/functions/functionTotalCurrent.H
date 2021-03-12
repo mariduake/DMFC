@@ -6,7 +6,7 @@ class functionTotalCurrent
 public: 
 
     functionTotalCurrent(scalar Nernst, scalar Vcell, scalar R, scalar A, scalar i0C, scalar B, scalar i0A, 
-                         scalar CO2Ref, scalar cMeRef, scalar concO2, scalar concMe)
+                         scalar cO2Ref, scalar cMeRef, scalar concO2, scalar concMe)
     :
     Nernst_(Nernst),
     Vcell_(Vcell),
