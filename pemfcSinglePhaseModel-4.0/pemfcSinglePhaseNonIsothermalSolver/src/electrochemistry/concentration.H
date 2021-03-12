@@ -41,7 +41,7 @@ scalarField concentrationMe(anodePatch.size());
 
    forAll(fuelSpecies, s)
    {
-      if (airSpecies[s].rSign() == -1)
+      if (fuelSpecies[s].rSign() == -1)
       {
            concentrationMe =
            (  
