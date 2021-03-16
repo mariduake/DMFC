@@ -159,7 +159,7 @@
 
     //Calculate anode and cathode concentrations
     // ADDED MARICARMEN DUARTE 2021
-    #include "concentration.H
+    #include "concentration.H"
 
     // Calculate cathode exchange current density
     #include "cathodeExchangeCurrentDensity.H"
@@ -169,7 +169,7 @@
 
     // Calculate cathode limiting current density 
     // SUPRESSED MDA
-    //#include "cathodeLimitingCurrentDensity.H"
+    #include "cathodeLimitingCurrentDensity.H"
 
     // Calculate total Current
     #include "totalCurrent.H"
@@ -183,7 +183,7 @@
     #include "anodeActivationOverpotential.H"
 
     // Calculate cathode concentration overpotential CHANGED FOR DMFC MDA ETA-CATHODE
-    //#include "cathodeConcentrationOverpotential.H"
+    #include "cathodeConcentrationOverpotential.H"
 
     // Calculate ohmic overpotential
     #include "ohmicOverpotential.H"

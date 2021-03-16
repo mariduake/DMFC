@@ -1,5 +1,6 @@
 //   calculate for DMFC Maricarmen Duarte
 //   eta-anode= (RT/alpha*f)* ln 
+
 //
 
 scalarField etaActivationAnode(anodePatch.size());
@@ -9,7 +10,7 @@ scalarField etaActivationAnode(anodePatch.size());
     (
         ((Rgas*anodeT)
         /(alphaAnodeElectrolyte.value()*F))
-        *Foam::log(I*cO2Ref/i0Anode*concentrationO2)
+        *Foam::log((I * cMeRef.value())/(i0A * concMe))
     );
 
     Info<< "min,mean,max (etaActCa) = " << gMin(etaActivationAnode) << "  "
@@ -22,4 +23,4 @@ scalarField& etaAtcAIn = etaActA.ref();
 smearPatchToMesh smearetaActA(electrolyteMesh, electrolyteAnodeName);
 etaAtcAIn = smearetaActA.smear(etaActivationAnode);
 etaActA.correctBoundaryConditions();
-etaActA.boundaryFieldRef()[electrolyteAnodeID] == etaActivationanode;
+etaActA.boundaryFieldRef()[electrolyteAnodeID] == etaActivationAnode;

@@ -35,6 +35,6 @@ i0C.boundaryFieldRef()[electrolyteCathodeID] == i0Cathode;*/
 //save data for output (MARICARMEN DUARTE 2021)
 scalarField& i0AIn = i0A.ref();
 smearPatchToMesh smeari0A(electrolyteMesh, electrolyteAnodeName);
-i0AIn = smeari0CA.smear(i0Anode);
+i0AIn = smeari0A.smear(i0Anode);
 i0A.correctBoundaryConditions();
 i0A.boundaryFieldRef()[electrolyteAnodeID] == i0Anode;

@@ -13,7 +13,7 @@
 // F = Faraday's constant
 // I0anode = anode exchange current density
 // I0cathode = cathode exchange current density
-/
+
 
 scalarField I(cathodePatch.size());
 {
@@ -24,7 +24,7 @@ scalarField I(cathodePatch.size());
 
     forAll (I, facei)
     {
-        A = (Rgas*cathodeT[facei]*)/(alphaCathodeElectrolyte.value()*F);
+        A = (Rgas*cathodeT[facei])/(alphaCathodeElectrolyte.value()*F);
         B=(Rgas*anodeT[facei])/(alphaAnodeElectrolyte.value()*F);
 
         r1 = i0Anode[facei] -1; //Revisar
@@ -41,7 +41,7 @@ scalarField I(cathodePatch.size());
             cO2Ref,
             concO2[facei],
             cMeRef,
-            conMe[facei]
+            concMe[facei]
         );
 
         I[facei] = RiddersRoot<functionTotalCurrent>(ftc, 1.0e-5).root(r0, r1); // upper boundary for root bracketing must be less than the limiting current density
