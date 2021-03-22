@@ -65,8 +65,7 @@ fsgDiffusionVolumeTable::fsgDiffusionVolumes[fsgDiffusionVolumeTable::nMolecules
     {"SF4",  71.3},
     {"Cl2",  38.4},
     {"Br2",  69.0},
-    {"SO2",  41.8},
-    {"CH3OH", 42.7}
+    {"SO2",  41.8}
 };
 
 

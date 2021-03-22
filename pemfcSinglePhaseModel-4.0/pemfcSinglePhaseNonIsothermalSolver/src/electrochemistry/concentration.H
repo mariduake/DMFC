@@ -33,7 +33,7 @@ scalarField& concO2In=concO2.ref();
 smearPatchToMesh smearconcO2(electrolyteMesh, electrolyteCathodeName);
 concO2In = smearconcO2.smear(concentrationO2);
 concO2.correctBoundaryConditions();
-concO2.boundaryFiedlRef()[electrolyteCathodeID] ==concentrationO2;
+concO2.boundaryFieldRef()[electrolyteCathodeID] ==concentrationO2;
 
 scalarField concentrationMe(anodePatch.size());
 {
@@ -41,7 +41,7 @@ scalarField concentrationMe(anodePatch.size());
 
    forAll(fuelSpecies, s)
    {
-      if (fuelSpecies[s].rSign() == -1)
+      if (airSpecies[s].rSign() == -1)
       {
            concentrationMe =
            (  
@@ -61,4 +61,4 @@ scalarField& concMeIn=concMe.ref();
 smearPatchToMesh smearconcMe(electrolyteMesh, electrolyteAnodeName);
 concMeIn = smearconcMe.smear(concentrationMe);
 concMe.correctBoundaryConditions();
-concMe.boundaryFiedlRef()[electrolyteAnodeID] ==concentrationMe;
+concMe.boundaryFieldRef()[electrolyteAnodeID] ==concentrationMe;

@@ -65,8 +65,7 @@ fsgMolecularWeightTable::fsgMolecularWeights[fsgMolecularWeightTable::nMolecules
     {"SF4", 108.05760},
     {"Cl2",  70.90600},
     {"Br2", 159.80180},
-    {"SO2",  64.06280},
-    {"CH3OH", 34.04243}
+    {"SO2",  64.06280}
 };
 
 
